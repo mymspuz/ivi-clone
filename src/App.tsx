@@ -1,26 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { Provider } from 'react-redux'
 
-function App() {
+import './assets/css/main.css'
+import './assets/css/fonts.css'
+import './assets/css/nebula-gambit.css'
+import './assets/css/gallery.css'
+import './assets/css/ivi-carousel.css'
+import './assets/css/defer_ds.css'
+import './assets/css/response.css'
+
+import MainRouter from './routes'
+import { store } from './store'
+
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+      <Provider store={ store }>
+        <MainRouter />
+      </Provider>
+  )
 }
 
-export default App;
+export default App
