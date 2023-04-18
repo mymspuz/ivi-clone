@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { IUIMenuMain } from '../../../models/uiMenu'
+import { IUIMenuMain } from '../../../../models/uiMenu'
 
 type TProps = {
     items: IUIMenuMain []
@@ -21,7 +21,6 @@ const HeaderMenu: React.FC<TProps> = ({ items, handlerHover }) => {
                                 key={item.id}
                                 className="headerMenu__listItem"
                                 onMouseEnter={() => handlerHover(item.addClass)}
-                                onMouseLeave={() => handlerHover(null)}
                             >
                                 <a
                                     href={item.link}

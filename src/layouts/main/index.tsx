@@ -2,7 +2,8 @@ import React from 'react'
 import { Outlet } from 'react-router-dom'
 
 import { addClass } from '../../utils/bodyClass'
-import { Header } from './components'
+import { Header } from './components/header'
+import { Footer } from './components/footer'
 
 const MainLayout: React.FC = () => {
 
@@ -14,6 +15,7 @@ const MainLayout: React.FC = () => {
             <main>
                 <Outlet />
             </main>
+            <Footer />
         </>
     )
 }

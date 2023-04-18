@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { IUIMenu } from '../../../../models/uiMenu'
+import { IUIMenu } from '../../../../../models/uiMenu'
 
 type TProps = {
     data: {

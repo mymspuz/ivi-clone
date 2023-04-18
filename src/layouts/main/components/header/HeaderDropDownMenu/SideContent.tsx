@@ -1,13 +1,30 @@
 import React from 'react'
 
-import { IUIMenu } from '../../../../models/uiMenu'
+import { IUIMenu } from '../../../../../models/uiMenu'
 import SideContentWidget from './SideContentWidget'
+import {
+    animationMenuItemsWidgetContent,
+    moviesMenuItemsWidgetContent,
+    seriesMenuItemsWidgetContent
+} from '../../../../../data/dataMenus'
 
 type TProps = {
+    id: string
     items: IUIMenu[]
 }
 
-const SideContent: React.FC<TProps> = ({ items }) => {
+const SideContent: React.FC<TProps> = ({ id, items }) => {
+
+    let posters: { id: number, path: string }[][] = []
+
+    if (id === 'headerTop_movies_menu_item') {
+        posters = moviesMenuItemsWidgetContent
+    } else if (id === 'headerTop_series_menu_item') {
+        posters = seriesMenuItemsWidgetContent
+    } else if (id === 'headerTop_animation_menu_item') {
+        posters = animationMenuItemsWidgetContent
+    }
+
     return (
         <div className="dropdownContent__sideContent">
             <div
@@ -32,7 +49,7 @@ const SideContent: React.FC<TProps> = ({ items }) => {
                     ))}
                 </div>
             </div>
-            <SideContentWidget />
+            <SideContentWidget data={posters}/>
         </div>
     )
 }
