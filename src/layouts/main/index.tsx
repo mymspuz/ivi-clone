@@ -12,9 +12,9 @@ const MainLayout: React.FC = () => {
     return (
         <>
             <Header />
-            <main>
+            <div className={'page-wrapper'}>
                 <Outlet />
-            </main>
+            </div>
             <Footer />
         </>
     )

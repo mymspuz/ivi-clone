@@ -438,3 +438,30 @@ export const tvplusMenuItemsWidgetContent: { id: number, path: string }[][] = [
         { id: 39, path: 'https://thumbs.dfs.ivi.ru/storage2/contents/2/b/6c4e058eecc7fdd08d8040fb46344a.jpg/256x144/?q=85' },
     ]
 ]
+
+export const footerMenuAbout: { title: string, items: IUIMenu[] } = {
+    title: 'О нас',
+    items: [
+        { id: 1, title: 'О компании', link: 'https://corp.ivi.ru/' },
+        { id: 2, title: 'Вакансии', link: 'https://corp.ivi.ru/career/#career-vacancy-block' },
+        { id: 3, title: 'Программа бета-тестирования', link: 'https://www.ivi.ru/pages/beta' },
+        { id: 4, title: 'Информация для партнёров', link: 'https://www.ivi.ru/info/partners' },
+        { id: 5, title: 'Размещение рекламы', link: 'https://corp.ivi.ru/advertisers/' },
+        { id: 6, title: 'Пользовательское соглашение', link: 'https://www.ivi.ru/info/agreement' },
+        { id: 7, title: 'Политика конфиденциальности', link: 'https://www.ivi.ru/info/confidential' },
+        { id: 8, title: 'Комплаенс', link: 'https://www.ivi.ru/info/goryachaya-liniya-komplaens' },
+    ]
+}
+
+export const footerMenuSections: { title: string, items: IUIMenu[] } = {
+    title: 'Разделы',
+    items: [
+        { id: 1, title: 'Мой Иви', link: 'https://www.ivi.ru/' },
+        { id: 2, title: 'Что нового', link: 'https://www.ivi.ru/new' },
+        { id: 3, title: 'Фильмы', link: 'https://www.ivi.ru/movies' },
+        { id: 4, title: 'Сериалы', link: 'https://www.ivi.ru/series' },
+        { id: 5, title: 'Мультфильмы', link: 'https://www.ivi.ru/animation' },
+        { id: 6, title: 'TV+', link: 'https://www.ivi.ru/tvplus' },
+        { id: 7, title: 'Что посмотреть', link: 'https://www.ivi.ru/goodmovies' },
+    ]
+}

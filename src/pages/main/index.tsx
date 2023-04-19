@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { addClass } from '../../utils/bodyClass'
+import { MainCompilation, MainSeo, MainSlider, Teaser, TopMain } from './components'
 
 const MainPage: React.FC = () => {
 
@@ -8,9 +9,13 @@ const MainPage: React.FC = () => {
     addClass('root', 'basePage__inner')
 
     return (
-        <div>
-            <h1>MainPage</h1>
-        </div>
+        <>
+            <MainSlider />
+            <Teaser />
+            <TopMain />
+            <MainSeo />
+            <MainCompilation title={'Добрые мультсериалы'} />
+        </>
     )
 }
 
