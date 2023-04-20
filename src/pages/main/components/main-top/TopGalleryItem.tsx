@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { IMainTop } from '../../../../models/Film'
+import { IMainTop } from '../../../../models/Movie'
 
 type TProps = {
     data: IMainTop

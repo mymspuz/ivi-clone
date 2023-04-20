@@ -1,9 +1,9 @@
 import React from 'react'
 
-import { IFilmCard } from '../../models/Film'
+import { IMovieCard } from '../../models/Movie'
 
 type TProps = {
-    data: IFilmCard
+    data: IMovieCard
 }
 
 const FilmCard: React.FC<TProps> = ({ data }) => {

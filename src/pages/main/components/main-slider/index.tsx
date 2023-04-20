@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { IMainBanner } from '../../../../models/Film'
+import { IMainBanner } from '../../../../models/Movie'
 import { mainSliders } from '../../../../data/dataMainSlider'
 import MainSliderCard from './MainSliderCard'
 

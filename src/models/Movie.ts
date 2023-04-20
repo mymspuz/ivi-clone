@@ -18,7 +18,7 @@ export interface IMainTop {
     link: string
 }
 
-export interface IFilmCard {
+export interface IMovieCard {
     id: number
     title: string
     link: string
@@ -27,4 +27,13 @@ export interface IFilmCard {
     detailRating: { name: string, value: number }[]
     info: { first: string, second: string }
     price: { classValue: string, textValue: string }
+}
+
+export interface IMovieReview {
+    id: number
+    parentId: number
+    author: string
+    content: string
+    date: string
+    vote: number
 }

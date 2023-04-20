@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { IMainBanner } from '../../../../models/Film'
+import { IMainBanner } from '../../../../models/Movie'
 
 type TProps = {
     data: IMainBanner

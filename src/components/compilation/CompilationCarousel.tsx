@@ -1,7 +1,7 @@
 import React from 'react'
 
-import { compilationAnimation } from '../../../../data/dataMainSlider'
-import FilmCard from '../../../../components/film-card'
+import { compilationAnimation } from '../../data/dataMainSlider'
+import { MovieCard } from '../index'
 
 const CompilationCarousel: React.FC = () => {
 
@@ -28,7 +28,7 @@ const CompilationCarousel: React.FC = () => {
                                         style={{ outline: 'none', width: '177px' }}
                                     >
                                         <div>
-                                            <FilmCard data={item} />
+                                            <MovieCard data={item} />
                                         </div>
                                     </div>
                                 ))}

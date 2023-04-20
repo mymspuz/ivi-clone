@@ -1,6 +1,6 @@
 import React from 'react'
-import CompilationHeader from './CompilationHeader'
-import CompilationCarousel from './CompilationCarousel'
+
+import { CompilationHeader, CompilationCarousel } from '../../../../components'
 
 type TProps = {
     title: string

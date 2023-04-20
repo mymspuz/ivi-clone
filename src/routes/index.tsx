@@ -2,7 +2,7 @@ import React from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 import { AdminLayout, MainLayout } from '../layouts'
-import { AdminPage, ErrorPage, MainPage } from '../pages'
+import { AdminPage, ErrorPage, MainPage, MoviePage } from '../pages'
 
 const MainRouter: React.FC = () => {
     return (
@@ -10,6 +10,7 @@ const MainRouter: React.FC = () => {
             <Routes>
                 <Route path='/' element={<MainLayout />}>
                     <Route index element={<MainPage />} />
+                    <Route path='movie' element={<MoviePage />} />
                 </Route>
                 <Route element={<AdminLayout />}>
                     <Route path='admin' element={<AdminPage />} />

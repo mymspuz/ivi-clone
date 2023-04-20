@@ -1,4 +1,4 @@
-import { IFilmCard, IMainBanner, IMainTop } from '../models/Film'
+import { IMovieCard, IMainBanner, IMainTop } from '../models/Movie'
 
 export const mainSliders: IMainBanner[] = [
     {
@@ -49,7 +49,7 @@ export const mainTop: IMainTop[] = [
     { id: 10, title: 'Чекаго', link: '#', img: 'https://thumbs.dfs.ivi.ru/storage6/contents/6/1/8d92b15c9499d9fc600768110e842a.jpg//304x620//?q=85', logo: 'https://thumbs.dfs.ivi.ru/storage4/contents/0/1/87189c6689c7ebbdcf6355b1cd3381.png/x200/?q=85' },
 ]
 
-export const compilationAnimation: IFilmCard[] = [
+export const compilationAnimation: IMovieCard[] = [
     {
         id: 1,
         title: 'Смешарики: Пин-код',
