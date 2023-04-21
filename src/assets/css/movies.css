@@ -1,0 +1,243 @@
+.moviesMain {
+  margin-top: 20px;
+  height: auto;
+  display: flex;
+  margin-left: 160px;
+  flex-direction: column;
+}
+.moviesMain h2 {
+  font-size: 24px;
+  font-weight: 600;
+}
+.categoryMovies {
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+  width: auto;
+  margin-left: 160px;
+}
+.categoriesMovies {
+  display: flex;
+  margin-top: 30px;
+  margin-left: 20px;
+}
+.categoriesMovies ul {
+  display: flex;
+  grid-gap: 20px;
+}
+.categoryMovies ul li {
+}
+.categoryMovies ul li p {
+  margin-left: 20px;
+}
+.filtersMovies {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.categoryMovieMain {
+  height: 160px;
+  width: 1210px;
+  margin-top: 20px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  background-color: #1f1b2e;
+}
+
+.rootNameMovie h1 {
+  font-size: 40px;
+  font-weight: 600;
+}
+.rootTagsMovie {
+  margin-top: 20px;
+  display: flex;
+}
+
+.filtersYear button {
+  color: gray;
+  width: 90px;
+  border-radius: 20px;
+  height: 30px;
+  background-color: rgb(32, 32, 52);
+}
+.filterFilms button {
+  color: gray;
+  width: 170px;
+  border-radius: 20px;
+  height: 30px;
+  margin-left: 20px;
+  background-color: rgb(32, 32, 52);
+}
+.categorySecondButton {
+  margin-left: 20px;
+}
+.rootMovie a {
+  font-size: 12px;
+}
+.rootMovie a:hover {
+  text-decoration: underline;
+}
+.rootMovie span {
+  font-size: 12px;
+  color: gray;
+}
+.MoviesCards {
+  display: flex;
+  margin-top: 20px;
+  grid-gap: 20px;
+}
+.deleteOptions {
+  margin-left: 20px;
+  margin-top: 10px;
+  color: gray;
+}
+.deleteOptionsText {
+  font-size: 14px;
+
+  cursor: pointer;
+}
+.categoryMovieMain {
+  grid-gap: 20px;
+}
+.genreMovies {
+  position: relative;
+  z-index: 1;
+  width: 218px;
+  background-color: #312b45;
+  height: 50px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.genreDropDown {
+  position: absolute;
+  top: 55px;
+  border-radius: 5px;
+  background-color: #312b45;
+  width: 630px;
+  height: 360px;
+  display: flex;
+  flex-direction: column;
+}
+.dropDownHeader ul {
+  display: flex;
+}
+.genreMoviesContent {
+  cursor: pointer;
+  width: 100%;
+}
+.dropDownHeaderContent {
+  display: flex;
+  width: auto;
+  margin-left: 20px;
+  margin-top: 20px;
+  grid-gap: 20px;
+}
+.dropDownHeaderContainer {
+  display: flex;
+  font-size: 13px;
+  font-weight: 600;
+  width: 100px;
+  height: 80px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #7e798f;
+  border-radius: 10px;
+}
+.dropDownHeaderContainer:hover {
+  background-color: #7e798f;
+}
+.dropDownListElements {
+  font-size: 15px;
+}
+.dropDownListElements p {
+  margin-top: 8px;
+  cursor: pointer;
+  color: #7e798f;
+  transition: 80ms all linear;
+}
+.dropDownListElements p:hover {
+  color: #ffff;
+}
+
+.dropDownContentList {
+  display: flex;
+  grid-gap: 90px;
+  margin-top: 10px;
+}
+.genreDropDown hr {
+  width: 600px;
+  margin-top: 10px;
+  height: 0.005px;
+}
+.categoryActived {
+  position: relative;
+  z-index: 1;
+  width: 218px;
+  background-color: #7e798f;
+  height: 50px;
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 16px;
+  border-radius: 5px;
+}
+.subGenreMovies {
+  position: relative;
+  z-index: 1;
+  width: 218px;
+  background-color: #312b45;
+  height: 50px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 16px;
+  border-radius: 5px;
+}
+.countryMovies {
+  position: relative;
+  z-index: 1;
+  width: 218px;
+  background-color: #312b45;
+  height: 50px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 16px;
+  border-radius: 5px;
+}
+.yearMovies {
+  position: relative;
+  z-index: 1;
+  width: 218px;
+  background-color: #312b45;
+  height: 50px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 16px;
+  border-radius: 5px;
+}
+.ratingMovies {
+  position: relative;
+  z-index: 1;
+  width: 218px;
+  background-color: #312b45;
+  height: 50px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 16px;
+  border-radius: 5px;
+}
