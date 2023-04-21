@@ -1,14 +1,14 @@
 import React from 'react'
 
-import { IMainTop } from '../../../../models/Movie'
+import { IMovie } from '../../../../models/Movie'
 
 type TProps = {
-    data: IMainTop
+    data: { id: number, movie: IMovie, logo: string }
 }
 
 const TopGalleryItem: React.FC<TProps> = ({ data }) => {
 
-    const { id, title, img, logo, link } = data
+    const { id, movie, logo} = data
 
     return (
         <div
@@ -17,16 +17,16 @@ const TopGalleryItem: React.FC<TProps> = ({ data }) => {
         >
             <a
                 className="nbl-posterUprightBlock nbl-posterUprightBlock_type_godun nbl-posterUprightBlock_status_default home__nbl-posterUprightBlock"
-                href={link}
+                href={'#'}
             >
                 <div className="nbl-posterUprightBlock__imageSection">
                     <div className="nbl-poster nbl-poster_type_godun nbl-posterUprightBlock__nbl-poster">
                         <div className="nbl-poster__imageWrapper">
                             <img
-                                alt={title}
+                                alt={movie.name}
                                 className="nbl-poster__image"
                                 data-stub="false"
-                                src={img}
+                                src={movie.poster}
                             />
                             <div className="nbl-poster__imageFade"></div>
                             <div className="nbl-poster__imageFadeFooter"></div>

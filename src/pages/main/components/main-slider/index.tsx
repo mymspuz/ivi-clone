@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { IMainBanner } from '../../../../models/Movie'
-import { mainSliders } from '../../../../data/dataMainSlider'
+import { mainSliders } from '../../../../data/dataMovie'
 import MainSliderCard from './MainSliderCard'
 
 const MainSlider: React.FC = () => {

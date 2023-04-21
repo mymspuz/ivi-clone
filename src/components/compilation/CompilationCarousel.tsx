@@ -1,11 +1,11 @@
 import React from 'react'
 
-import { compilationAnimation } from '../../data/dataMainSlider'
 import { MovieCard } from '../index'
+import { dataMovies } from '../../data/dataMovie'
 
 const CompilationCarousel: React.FC = () => {
 
-    const animations = compilationAnimation
+    const animations = dataMovies
 
     return (
         <div className="gallery__carousel">

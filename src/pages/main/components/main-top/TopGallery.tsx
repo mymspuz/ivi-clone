@@ -1,12 +1,12 @@
 import React from 'react'
 
-import { mainTop } from '../../../../data/dataMainSlider'
 import TopGalleryItem from './TopGalleryItem'
+import { dataMoviesTop } from '../../../../data/dataMovie'
 
 
 const TopGallery: React.FC = () => {
 
-    const tops = mainTop
+    const tops = dataMoviesTop
 
     return (
         <div className="gallery__carousel">
@@ -15,7 +15,8 @@ const TopGallery: React.FC = () => {
                     <div className="ivi-carousel">
                         <div className="ivi-carousel-viewport">
                             <div className="ivi-carousel-container">
-                                {tops && tops.map(top => <TopGalleryItem key={top.id} data={top} />)}
+                                {tops && tops.map((top, index) =>
+                                    <TopGalleryItem key={top.movie.id} data={{ id: index + 1, ...top }} />)}
                             </div>
                         </div>
                         <span className="xArrowButton xArrowButton_top10 xArrowButton_direction_right gallery__xArrowButton">

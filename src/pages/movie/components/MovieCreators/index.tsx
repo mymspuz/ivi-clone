@@ -1,12 +1,12 @@
 import React from 'react'
 
 import { CompilationHeader } from '../../../../components'
-import { creatorsList } from '../../../../data/dataCreators'
 import MovieCreatorCarousel from './MovieCreatorCarousel'
+import { dataMovies } from '../../../../data/dataMovie'
 
 const MovieCreators = () => {
 
-    const creators = creatorsList
+    const creators = dataMovies[0].creators
 
     return (
         <section className="pageSection contentCard__pageSection" id="creatorsList">
@@ -15,7 +15,7 @@ const MovieCreators = () => {
                     <div className="creatorsList contentCard__creatorsList">
                         <div className="gallery gallery_creators gallery gallery_mGap pageSection__gallery">
                             <CompilationHeader title={'Актёры и создатели'} />
-                            <MovieCreatorCarousel creators={creators} />
+                            <MovieCreatorCarousel data={creators} />
                         </div>
                     </div>
                 </div>

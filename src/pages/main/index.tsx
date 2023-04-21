@@ -15,6 +15,7 @@ const MainPage: React.FC = () => {
             <TopMain />
             <MainSeo />
             <MainCompilation title={'Добрые мультсериалы'} />
+            <MainCompilation title={'Зарубежные мелодраматические сериалы'} />
         </>
     )
 }

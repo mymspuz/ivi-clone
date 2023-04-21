@@ -28,7 +28,7 @@ const MovieReviewItem: React.FC<TProps> = ({ review }) => {
                 <div className="ugcTile__inner">
                     <div className="ugcTile__author">{review.author}</div>
                     <div className="ugcTile__textBlock">{review.content}</div>
-                    <div className="ugcTile__date">{review.date}</div>
+                    <div className="ugcTile__date">{review.date.toString()}</div>
                 </div>
             </a>
         </div>

@@ -2,13 +2,11 @@ import React from 'react'
 
 import { IMovieReview } from '../../../../models/Movie'
 import MovieReviewItem from './MovieReviewItem'
+import { dataReviews } from '../../../../data/dataMovie'
 
 const MovieReviews: React.FC = () => {
 
-    const reviews: IMovieReview[] = [
-        { id: 1, parentId: 0, author: 'Елена', content: 'Очень хороший сериал, необычная развязка, в духе скандинавких детективов - мрачно, загадочно, необычно. Понравилось, что в конце фильма все стало понятно :).', date: '14 сентября 2021', vote: 6 },
-        { id: 2, parentId: 0, author: 'EE', content: 'угрюмоватый, не тянет на 9,4 совсем, 6 поставила', date: '14 сентября 2021', vote: 6 },
-    ]
+    const reviews: IMovieReview[] = dataReviews
 
     return (
         <section className="pageSection contentCard__pageSection">
