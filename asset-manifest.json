@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/ivi-clone/static/css/main.f47da924.css",
+    "main.js": "/ivi-clone/static/js/main.d86e04d0.js",
+    "static/js/787.32e1ed32.chunk.js": "/ivi-clone/static/js/787.32e1ed32.chunk.js",
+    "static/media/bg_image.png": "/ivi-clone/static/media/bg_image.171c64b4045c1a847271.png",
+    "static/media/activ-logo.png?ver=": "/ivi-clone/static/media/activ-logo.c8ecbe531666f0822513.png",
+    "static/media/ivi-icons.ttf?ver=": "/ivi-clone/static/media/ivi-icons.628b73e689d843045a5a.ttf",
+    "static/media/rtelecom-logo.png?ver=": "/ivi-clone/static/media/rtelecom-logo.fbf84a9551e7fc6ce526.png",
+    "static/media/megafon-logo.png?ver=": "/ivi-clone/static/media/megafon-logo.d7e40c5a433556f18f42.png",
+    "static/media/cvm_ivi-logo.png?ver=": "/ivi-clone/static/media/cvm_ivi-logo.026e8ba7cd08ebb49669.png",
+    "static/media/mts.png?ver=": "/ivi-clone/static/media/mts.026e8ba7cd08ebb49669.png",
+    "static/media/mtsbelarus-logo.png?ver=": "/ivi-clone/static/media/mtsbelarus-logo.888c13b7202b2b3a89e4.png",
+    "static/media/yota-logo.png?ver=": "/ivi-clone/static/media/yota-logo.3a59e12d97d2f6f168f3.png",
+    "static/media/ivi-icons.woff?ver=": "/ivi-clone/static/media/ivi-icons.1e61b12bc891a8cd9cd8.woff",
+    "static/media/tinkoff-logo.png?ver=": "/ivi-clone/static/media/tinkoff-logo.8e18ada4311e38149f50.png",
+    "static/media/consoles.svg?ver=": "/ivi-clone/static/media/consoles.292fbc1df422662b77ff.svg",
+    "static/media/tvconsoles.svg?ver=": "/ivi-clone/static/media/tvconsoles.d2b8e9cf722df926c827.svg",
+    "static/media/smarttv.svg?ver=": "/ivi-clone/static/media/smarttv.b4b5d8ac8d91878fd3b8.svg",
+    "static/media/mobile.svg?ver=": "/ivi-clone/static/media/mobile.e21b8ad8d2c0e48b9876.svg",
+    "index.html": "/ivi-clone/index.html",
+    "main.f47da924.css.map": "/ivi-clone/static/css/main.f47da924.css.map",
+    "main.d86e04d0.js.map": "/ivi-clone/static/js/main.d86e04d0.js.map",
+    "787.32e1ed32.chunk.js.map": "/ivi-clone/static/js/787.32e1ed32.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f47da924.css",
+    "static/js/main.d86e04d0.js"
+  ]
+}
