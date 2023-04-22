@@ -534,7 +534,7 @@ html {
     font-weight: 400;
     font-style: normal;
     font-display: swap;
-    src: url(https://www.ivi.ru/fonts/ivi-icons.woff?ver=4d5445fa74bd9cfa8a20d4457978fff5) format('woff'), url(https://www.ivi.ru/fonts/ivi-icons.ttf?ver=01c17e9e19e708171d9af9a37213bdfe) format('truetype'), local('☺')
+    src: url(../fonts/ivi-icons.woff?ver=4d5445fa74bd9cfa8a20d4457978fff5) format('woff'), url(../fonts/ivi-icons.ttf?ver=01c17e9e19e708171d9af9a37213bdfe) format('truetype'), local('☺')
 }
 
 .lowest-teaser {
