@@ -14,7 +14,8 @@ import { mainMenuItems } from '../../../../data/dataMenus'
 const Header: React.FC = () => {
 
     const headerTopClassNameDefault: string = 'headerTop headerTop_withoutBorder headerTop_state_init headerTop_hasDropdownMenu'
-    const [headerTopClassName, setHeaderTopClassName] = useState<string | null>(headerTopClassNameDefault)
+    const [headerTopClassName, setHeaderTopClassName] = useState<string | null>(null)
+
     const menuItemHover = (id: string | null) => {
         setHeaderTopClassName(id)
     }
@@ -35,14 +36,16 @@ const Header: React.FC = () => {
                                 <HeaderNotify handlerHover={menuItemHover} />
                                 <HeaderAvatar handlerHover={menuItemHover} />
                             </div>
-                            <div
-                                className="headerDropdownBody"
-                                id="headerDropdownBody"
-                                style={{ height: '460px' }}
-                                onMouseLeave={() => menuItemHover(null)}
-                            >
-                                {headerTopClassName && <HeaderDropDown id={headerTopClassName} />}
-                            </div>
+                            {headerTopClassName &&
+                                <div
+                                    className="headerDropdownBody"
+                                    id="headerDropdownBody"
+                                    style={{ height: '460px' }}
+                                    onMouseLeave={() => menuItemHover(null)}
+                                >
+                                    <HeaderDropDown id={headerTopClassName} />
+                                </div>
+                            }
                         </div>
                     </div>
                 </div>

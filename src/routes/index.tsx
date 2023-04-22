@@ -1,12 +1,12 @@
 import React from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, HashRouter, Route, Routes } from 'react-router-dom'
 
 import { AdminLayout, MainLayout } from '../layouts'
 import { AdminPage, ErrorPage, MainPage, MoviePage, MoviesPage, PersonPage } from '../pages'
 
 const MainRouter: React.FC = () => {
     return (
-        <BrowserRouter>
+        <HashRouter>
             <Routes>
                 <Route path='/' element={<MainLayout />}>
                     <Route index element={<MainPage />} />
@@ -19,7 +19,7 @@ const MainRouter: React.FC = () => {
                 </Route>
                 <Route path='*' element={<ErrorPage />} />
             </Routes>
-        </BrowserRouter>
+        </HashRouter>
     )
 }
 
