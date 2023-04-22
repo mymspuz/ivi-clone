@@ -10,7 +10,7 @@ const HeaderSearchPopup = () => {
                 <div className="fullscreen-popup__scroll-wrapper">
                     <div className="fullscreen-popup__wrapper">
                         <HeaderSearchContext.Consumer>
-                            {({ isSearch, toggleSearch }) => (
+                            {({ toggleSearch }) => (
                                 <button
                                     className="fullscreen-popup__close-view-button"
                                     title="Нажмите, чтобы закрыть форму"

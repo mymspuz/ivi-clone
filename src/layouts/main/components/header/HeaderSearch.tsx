@@ -6,7 +6,7 @@ const HeaderSearch: React.FC = () => {
     return (
         <div className="headerTop__headerSearch">
             <HeaderSearchContext.Consumer>
-                {({ isSearch, toggleSearch }) => (
+                {({ toggleSearch }) => (
                     <button
                         data-test="header_search"
                         className="nbl-button nbl-button_iconMode_withIcon nbl-button_style_sairo nbl-button_size_stryker nbl-button_hasBadge_0"

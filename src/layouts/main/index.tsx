@@ -21,7 +21,7 @@ const MainLayout: React.FC = () => {
 
     return (
         <>
-            <HeaderSearchContext.Provider value={{ isSearch: isSearch, toggleSearch: () => setIsSearch(!isSearch) }}>
+            <HeaderSearchContext.Provider value={{ toggleSearch: () => setIsSearch(!isSearch) }}>
                 <Header />
                 {isSearch && <HeaderSearchPopup />}
             </HeaderSearchContext.Provider>
