@@ -4,17 +4,19 @@ import { IMainBanner } from '../../../../models/Movie'
 
 type TProps = {
     data: IMainBanner
+    active?: boolean
 }
 
-const MainSliderCard: React.FC<TProps> = ({ data }) => {
+const MainSliderItem: React.FC<TProps> = ({ data, active }) => {
 
     const { id, banner, title, desc, link } = data
 
+    const sizeItem = window.innerWidth > 900 ? 1216 : 638
+
     return (
         <div
-            className={`ivi-carousel-item ${id === 2 ? 'isActive' : ''}`}
-            // data-clonned="true"
-            style={{width: '1216px', paddingRight: '16px'}}
+            className={`ivi-carousel-item ${active ? 'isActive' : ''}`}
+            style={{ width: `${sizeItem}px`, paddingRight: '16px' }}
         >
             <div className="promoSlider__item promoSlider__item_version_2" data-promoid={id}>
                 <div className="promoSlider__itemContent">
@@ -64,4 +66,4 @@ const MainSliderCard: React.FC<TProps> = ({ data }) => {
     )
 }
 
-export default MainSliderCard
+export default MainSliderItem

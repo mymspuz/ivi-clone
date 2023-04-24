@@ -3,17 +3,21 @@ import React from 'react'
 import { IMovie } from '../../../../models/Movie'
 
 type TProps = {
-    data: { id: number, movie: IMovie, logo: string }
+    data: { id: number, movie: IMovie, logo: string },
+    size?: {
+        width: number
+        padding: number
+    }
 }
 
-const TopGalleryItem: React.FC<TProps> = ({ data }) => {
+const TopGalleryItem: React.FC<TProps> = ({ data, size }) => {
 
     const { id, movie, logo} = data
 
     return (
         <div
             className="ivi-carousel-item"
-            style={{ width: '224px', paddingRight: '24px' }}
+            style={{ width: `${size?.width}px`, paddingRight: `${size?.padding}px` }}
         >
             <a
                 className="nbl-posterUprightBlock nbl-posterUprightBlock_type_godun nbl-posterUprightBlock_status_default home__nbl-posterUprightBlock"

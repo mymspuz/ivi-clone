@@ -7,6 +7,9 @@ import {
     tvplusSlider
 } from '../../../../../data/dataMenus'
 import SideContentWidget from './SideContentWidget'
+import TVPlusBroadcastItem from './TVPlusBroadcastItem'
+import GalleryCarousel from '../../../../../components/gallery-carousel/GalleryCarousel'
+import TvPlusPopular from './TVPlusPopular'
 
 const TvPlus: React.FC = () => {
     const tvplusMenu = tvplusMenuItems
@@ -48,104 +51,18 @@ const TvPlus: React.FC = () => {
                                         <div key={popular.title} className="dropdownTvPopular">
                                             <div className="dropdownTvPopular__title">{popular.title}</div>
                                             <div className="gallery gallery gallery_ivi-carousel">
-                                                <div className="gallery__carousel">
-                                                    <div className="gallery__viewport">
-                                                        <div className="gallery__viewport-inner">
-                                                            <div className="ivi-carousel">
-                                                                <div className="ivi-carousel-viewport">
-                                                                    <div className="ivi-carousel-container">
-                                                                        {popular.data.map(item => (
-                                                                            <div
-                                                                                key={item.link}
-                                                                                className="ivi-carousel-item"
-                                                                                style={{ width: '88.1538px', paddingRight: '16px' }}
-                                                                            >
-                                                                                <div className="dropdownTvPopular__item">
-                                                                                    <a
-                                                                                        className="nbl-poster nbl-poster_type_broadcastThumb"
-                                                                                        href={item.link}
-                                                                                    >
-                                                                                        <div className="nbl-poster__imageWrapper">
-                                                                                            <img
-                                                                                                className="nbl-poster__image"
-                                                                                                data-stub="false"
-                                                                                                src={item.poster}
-                                                                                                alt={'poster'}
-                                                                                            />
-                                                                                        </div>
-                                                                                    </a>
-                                                                                </div>
-                                                                            </div>
-                                                                        ))}
-                                                                    </div>
-                                                                </div>
-                                                                <div className="ivi-carousel__shadow_right"></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                <GalleryCarousel size={{ width: 88.1538, padding: 16 }} type={'small'}>
+                                                    {popular.data.map(item => <TvPlusPopular data={item} />)}
+                                                </GalleryCarousel>
                                             </div>
                                         </div>
                                     ))}
                                     <div className="dropdownBroadcastPopular">
                                         <div className="dropdownBroadcastPopular__title">{broadcast.title}</div>
                                             <div className="gallery gallery gallery_ivi-carousel">
-                                                <div className="gallery__carousel">
-                                                    <div className="gallery__viewport">
-                                                        <div className="gallery__viewport-inner">
-                                                            <div className="ivi-carousel">
-                                                                <div className="ivi-carousel-viewport">
-                                                                    <div className="ivi-carousel-container">
-                                                                        {broadcast.data.map(item => (
-                                                                            <div
-                                                                                key={item.link}
-                                                                                className="ivi-carousel-item"
-                                                                                style={{ width: '254.8px', paddingRight: '16px' }}
-                                                                            >
-                                                                                <div className="dropdownBroadcastPopular__item">
-                                                                                    <a
-                                                                                        className="nbl-posterSidewardBlock nbl-posterSidewardBlock_type_broadcastThumb nbl-posterSidewardBlock_size_kebles nbl-posterSidewardBlock_style_kotenic"
-                                                                                        href={item.link}
-                                                                                    >
-                                                                                        <div className="nbl-posterSidewardBlock__bodyWrapper">
-                                                                                            <div className="nbl-posterSidewardBlock__body">
-                                                                                                <div className="nbl-posterSidewardBlock__imageSection">
-                                                                                                    <div className="nbl-poster nbl-poster_type_broadcastThumb nbl-poster_extrasMode_lu nbl-posterSidewardBlock__nbl-poster">
-                                                                                                        <div className="nbl-poster__imageWrapper">
-                                                                                                            <img
-                                                                                                                className="nbl-poster__image"
-                                                                                                                data-stub="false"
-                                                                                                                src={item.poster}
-                                                                                                                alt={'broadcast'}
-                                                                                                            />
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                                <div className="nbl-posterSidewardBlock__textSection">
-                                                                                                    <div className="nbl-posterSidewardBlock__titleRow">
-                                                                                                        <div className="nbl-posterSidewardBlock__title">
-                                                                                                            {item.titleBroadcast}
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                    <div className="nbl-posterSidewardBlock__extraRow">
-                                                                                                        <span className="nbl-posterSidewardBlock__extraItem">{item.timeBroadcast}</span>
-                                                                                                        <span className="nbl-posterSidewardBlock__extraSeparator">•</span>
-                                                                                                        <span className="nbl-posterSidewardBlock__extraItem">{item.typeBroadcast}</span>
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </a>
-                                                                                </div>
-                                                                            </div>
-                                                                        ))}
-                                                                    </div>
-                                                                </div>
-                                                                <div className="ivi-carousel__shadow_right"></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                <GalleryCarousel type={'small'} size={{ width: 254.8, padding: 16 }}>
+                                                    {broadcast.data.map(item => <TVPlusBroadcastItem key={item.link} data={item} />)}
+                                                </GalleryCarousel>
                                             </div>
                                         </div>
                                     </div>
