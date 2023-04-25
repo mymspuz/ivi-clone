@@ -14,7 +14,7 @@ type TProps = {
     }
 }
 
-const TvPlusPopular: React.FC<TProps> = ({ data, size }) => {
+const TvPlusPopularItem: React.FC<TProps> = ({ data, size }) => {
     return (
         <div
             key={data.link}
@@ -41,4 +41,4 @@ const TvPlusPopular: React.FC<TProps> = ({ data, size }) => {
     )
 }
 
-export default TvPlusPopular
+export default TvPlusPopularItem

@@ -9,7 +9,7 @@ import {
 import SideContentWidget from './SideContentWidget'
 import TVPlusBroadcastItem from './TVPlusBroadcastItem'
 import GalleryCarousel from '../../../../../components/gallery-carousel/GalleryCarousel'
-import TvPlusPopular from './TVPlusPopular'
+import TvPlusPopularItem from './TvPlusPopularItem'
 
 const TvPlus: React.FC = () => {
     const tvplusMenu = tvplusMenuItems
@@ -52,7 +52,7 @@ const TvPlus: React.FC = () => {
                                             <div className="dropdownTvPopular__title">{popular.title}</div>
                                             <div className="gallery gallery gallery_ivi-carousel">
                                                 <GalleryCarousel size={{ width: 88.1538, padding: 16 }} type={'small'}>
-                                                    {popular.data.map(item => <TvPlusPopular data={item} />)}
+                                                    {popular.data.map(item => <TvPlusPopularItem key={item.link} data={item} />)}
                                                 </GalleryCarousel>
                                             </div>
                                         </div>

@@ -27,6 +27,7 @@ export interface IMovie {
     description: string                                                         // Описание
     country: { id: number, name: string }[]                                     // Список стран
     price: { id: number, priceType: string }                                    // Цена
+    feature: string                                                             // Особенный признак - эксклюзив, Выбор Иви и т.д.
     creators: {
         id: number,
         creator: IMovieCreator,

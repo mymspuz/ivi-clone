@@ -11,7 +11,7 @@ const MainSliderItem: React.FC<TProps> = ({ data, active }) => {
 
     const { id, banner, title, desc, link } = data
 
-    const sizeItem = window.innerWidth > 900 ? 1216 : 638
+    const sizeItem = window.innerWidth > 900 ? 1216 : window.innerWidth - 60
 
     return (
         <div

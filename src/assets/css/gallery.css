@@ -196,6 +196,20 @@ body.touch .gallery.gallery_ivi-carousel .gallery__carousel .gallery__list {
     display: flex
 }
 
+.gallery .nbl-poster__hoards {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    z-index: 2;
+}
+
+.gallery .nbl-poster__hoards .nbl-poster__hoard {
+    position: relative!important;
+}
+
 .gallery__list {
     -webkit-flex-wrap: wrap;
     -ms-flex-wrap: wrap;

@@ -115,6 +115,7 @@ export const dataMovies: IMovie[] = [
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad asperiores delectus deleniti dolor dolore est ex impedit magnam maiores nobis obcaecati perferendis porro provident quaerat ratione recusandae repudiandae sapiente tempora temporibus, totam ullam vel voluptas voluptates. Cum praesentium quos sit?',
         country: [{ id: 1, name: 'Россия' }],
         price: { id: 1, priceType: 'Бесплатно' },
+        feature: '',
         creators: [
             { id: 1, creator: dataCreators[0], role: 'Режиссёр' },
             { id: 2, creator: dataCreators[1], role: 'Актёр' },
@@ -148,6 +149,7 @@ export const dataMovies: IMovie[] = [
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad asperiores delectus deleniti dolor dolore est ex impedit magnam maiores nobis obcaecati perferendis porro provident quaerat ratione recusandae repudiandae sapiente tempora temporibus, totam ullam vel voluptas voluptates. Cum praesentium quos sit?',
         country: [{ id: 1, name: 'Россия' }],
         price: { id: 1, priceType: 'Бесплатно' },
+        feature: 'эксклюзив',
         creators: [
             { id: 1, creator: dataCreators[0], role: 'Режиссёр' },
             { id: 2, creator: dataCreators[1], role: 'Актёр' },
@@ -181,6 +183,7 @@ export const dataMovies: IMovie[] = [
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad asperiores delectus deleniti dolor dolore est ex impedit magnam maiores nobis obcaecati perferendis porro provident quaerat ratione recusandae repudiandae sapiente tempora temporibus, totam ullam vel voluptas voluptates. Cum praesentium quos sit?',
         country: [{ id: 1, name: 'Россия' }],
         price: { id: 1, priceType: 'Бесплатно' },
+        feature: '',
         creators: [
             { id: 1, creator: dataCreators[0], role: 'Режиссёр' },
             { id: 2, creator: dataCreators[1], role: 'Актёр' },
@@ -214,6 +217,7 @@ export const dataMovies: IMovie[] = [
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad asperiores delectus deleniti dolor dolore est ex impedit magnam maiores nobis obcaecati perferendis porro provident quaerat ratione recusandae repudiandae sapiente tempora temporibus, totam ullam vel voluptas voluptates. Cum praesentium quos sit?',
         country: [{ id: 1, name: 'Россия' }],
         price: { id: 1, priceType: 'Бесплатно' },
+        feature: '',
         creators: [
             { id: 1, creator: dataCreators[0], role: 'Режиссёр' },
             { id: 2, creator: dataCreators[1], role: 'Актёр' },
@@ -247,6 +251,7 @@ export const dataMovies: IMovie[] = [
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad asperiores delectus deleniti dolor dolore est ex impedit magnam maiores nobis obcaecati perferendis porro provident quaerat ratione recusandae repudiandae sapiente tempora temporibus, totam ullam vel voluptas voluptates. Cum praesentium quos sit?',
         country: [{ id: 1, name: 'Россия' }],
         price: { id: 1, priceType: 'Бесплатно' },
+        feature: '',
         creators: [
             { id: 1, creator: dataCreators[0], role: 'Режиссёр' },
             { id: 2, creator: dataCreators[1], role: 'Актёр' },
@@ -280,6 +285,7 @@ export const dataMovies: IMovie[] = [
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad asperiores delectus deleniti dolor dolore est ex impedit magnam maiores nobis obcaecati perferendis porro provident quaerat ratione recusandae repudiandae sapiente tempora temporibus, totam ullam vel voluptas voluptates. Cum praesentium quos sit?',
         country: [{ id: 1, name: 'Россия' }],
         price: { id: 1, priceType: 'Бесплатно' },
+        feature: '',
         creators: [
             { id: 1, creator: dataCreators[0], role: 'Режиссёр' },
             { id: 2, creator: dataCreators[1], role: 'Актёр' },
@@ -313,6 +319,7 @@ export const dataMovies: IMovie[] = [
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad asperiores delectus deleniti dolor dolore est ex impedit magnam maiores nobis obcaecati perferendis porro provident quaerat ratione recusandae repudiandae sapiente tempora temporibus, totam ullam vel voluptas voluptates. Cum praesentium quos sit?',
         country: [{ id: 1, name: 'Россия' }],
         price: { id: 1, priceType: 'Бесплатно' },
+        feature: 'Выбор Иви',
         creators: [
             { id: 1, creator: dataCreators[0], role: 'Режиссёр' },
             { id: 2, creator: dataCreators[1], role: 'Актёр' },
@@ -346,6 +353,7 @@ export const dataMovies: IMovie[] = [
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad asperiores delectus deleniti dolor dolore est ex impedit magnam maiores nobis obcaecati perferendis porro provident quaerat ratione recusandae repudiandae sapiente tempora temporibus, totam ullam vel voluptas voluptates. Cum praesentium quos sit?',
         country: [{ id: 1, name: 'Россия' }],
         price: { id: 1, priceType: 'Бесплатно' },
+        feature: '',
         creators: [
             { id: 1, creator: dataCreators[0], role: 'Режиссёр' },
             { id: 2, creator: dataCreators[1], role: 'Актёр' },
@@ -379,6 +387,7 @@ export const dataMovies: IMovie[] = [
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad asperiores delectus deleniti dolor dolore est ex impedit magnam maiores nobis obcaecati perferendis porro provident quaerat ratione recusandae repudiandae sapiente tempora temporibus, totam ullam vel voluptas voluptates. Cum praesentium quos sit?',
         country: [{ id: 1, name: 'Россия' }],
         price: { id: 1, priceType: 'Бесплатно' },
+        feature: '',
         creators: [
             { id: 1, creator: dataCreators[0], role: 'Режиссёр' },
             { id: 2, creator: dataCreators[1], role: 'Актёр' },
@@ -412,6 +421,7 @@ export const dataMovies: IMovie[] = [
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad asperiores delectus deleniti dolor dolore est ex impedit magnam maiores nobis obcaecati perferendis porro provident quaerat ratione recusandae repudiandae sapiente tempora temporibus, totam ullam vel voluptas voluptates. Cum praesentium quos sit?',
         country: [{ id: 1, name: 'Россия' }],
         price: { id: 1, priceType: 'Бесплатно' },
+        feature: '',
         creators: [
             { id: 1, creator: dataCreators[0], role: 'Режиссёр' },
             { id: 2, creator: dataCreators[1], role: 'Актёр' },
@@ -445,6 +455,7 @@ export const dataMovies: IMovie[] = [
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad asperiores delectus deleniti dolor dolore est ex impedit magnam maiores nobis obcaecati perferendis porro provident quaerat ratione recusandae repudiandae sapiente tempora temporibus, totam ullam vel voluptas voluptates. Cum praesentium quos sit?',
         country: [{ id: 1, name: 'Россия' }],
         price: { id: 1, priceType: 'Бесплатно' },
+        feature: '',
         creators: [
             { id: 1, creator: dataCreators[0], role: 'Режиссёр' },
             { id: 2, creator: dataCreators[1], role: 'Актёр' },
@@ -478,6 +489,7 @@ export const dataMovies: IMovie[] = [
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad asperiores delectus deleniti dolor dolore est ex impedit magnam maiores nobis obcaecati perferendis porro provident quaerat ratione recusandae repudiandae sapiente tempora temporibus, totam ullam vel voluptas voluptates. Cum praesentium quos sit?',
         country: [{ id: 1, name: 'Россия' }],
         price: { id: 1, priceType: 'Бесплатно' },
+        feature: '',
         creators: [
             { id: 1, creator: dataCreators[0], role: 'Режиссёр' },
             { id: 2, creator: dataCreators[1], role: 'Актёр' },
@@ -511,6 +523,7 @@ export const dataMovies: IMovie[] = [
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad asperiores delectus deleniti dolor dolore est ex impedit magnam maiores nobis obcaecati perferendis porro provident quaerat ratione recusandae repudiandae sapiente tempora temporibus, totam ullam vel voluptas voluptates. Cum praesentium quos sit?',
         country: [{ id: 1, name: 'Россия' }],
         price: { id: 1, priceType: 'Бесплатно' },
+        feature: '',
         creators: [
             { id: 1, creator: dataCreators[0], role: 'Режиссёр' },
             { id: 2, creator: dataCreators[1], role: 'Актёр' },
@@ -544,6 +557,7 @@ export const dataMovies: IMovie[] = [
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad asperiores delectus deleniti dolor dolore est ex impedit magnam maiores nobis obcaecati perferendis porro provident quaerat ratione recusandae repudiandae sapiente tempora temporibus, totam ullam vel voluptas voluptates. Cum praesentium quos sit?',
         country: [{ id: 1, name: 'Россия' }],
         price: { id: 1, priceType: 'Бесплатно' },
+        feature: '',
         creators: [
             { id: 1, creator: dataCreators[0], role: 'Режиссёр' },
             { id: 2, creator: dataCreators[1], role: 'Актёр' },
@@ -581,6 +595,7 @@ export const dataMoviesTop: { movie: IMovie, logo: string }[] = [
             description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad asperiores delectus deleniti dolor dolore est ex impedit magnam maiores nobis obcaecati perferendis porro provident quaerat ratione recusandae repudiandae sapiente tempora temporibus, totam ullam vel voluptas voluptates. Cum praesentium quos sit?',
             country: [{ id: 1, name: 'Россия' }],
             price: { id: 1, priceType: 'Бесплатно' },
+            feature: '',
             creators: [
                 { id: 1, creator: dataCreators[0], role: 'Режиссёр' },
                 { id: 2, creator: dataCreators[1], role: 'Актёр' },
@@ -617,6 +632,7 @@ export const dataMoviesTop: { movie: IMovie, logo: string }[] = [
             description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad asperiores delectus deleniti dolor dolore est ex impedit magnam maiores nobis obcaecati perferendis porro provident quaerat ratione recusandae repudiandae sapiente tempora temporibus, totam ullam vel voluptas voluptates. Cum praesentium quos sit?',
             country: [{ id: 1, name: 'Россия' }],
             price: { id: 1, priceType: 'Бесплатно' },
+            feature: '',
             creators: [
                 { id: 1, creator: dataCreators[0], role: 'Режиссёр' },
                 { id: 2, creator: dataCreators[1], role: 'Актёр' },
@@ -653,6 +669,7 @@ export const dataMoviesTop: { movie: IMovie, logo: string }[] = [
             description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad asperiores delectus deleniti dolor dolore est ex impedit magnam maiores nobis obcaecati perferendis porro provident quaerat ratione recusandae repudiandae sapiente tempora temporibus, totam ullam vel voluptas voluptates. Cum praesentium quos sit?',
             country: [{ id: 1, name: 'Россия' }],
             price: { id: 1, priceType: 'Бесплатно' },
+            feature: '',
             creators: [
                 { id: 1, creator: dataCreators[0], role: 'Режиссёр' },
                 { id: 2, creator: dataCreators[1], role: 'Актёр' },
@@ -689,6 +706,7 @@ export const dataMoviesTop: { movie: IMovie, logo: string }[] = [
             description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad asperiores delectus deleniti dolor dolore est ex impedit magnam maiores nobis obcaecati perferendis porro provident quaerat ratione recusandae repudiandae sapiente tempora temporibus, totam ullam vel voluptas voluptates. Cum praesentium quos sit?',
             country: [{ id: 1, name: 'Россия' }],
             price: { id: 1, priceType: 'Бесплатно' },
+            feature: '',
             creators: [
                 { id: 1, creator: dataCreators[0], role: 'Режиссёр' },
                 { id: 2, creator: dataCreators[1], role: 'Актёр' },
@@ -725,6 +743,7 @@ export const dataMoviesTop: { movie: IMovie, logo: string }[] = [
             description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad asperiores delectus deleniti dolor dolore est ex impedit magnam maiores nobis obcaecati perferendis porro provident quaerat ratione recusandae repudiandae sapiente tempora temporibus, totam ullam vel voluptas voluptates. Cum praesentium quos sit?',
             country: [{ id: 1, name: 'Россия' }],
             price: { id: 1, priceType: 'Бесплатно' },
+            feature: '',
             creators: [
                 { id: 1, creator: dataCreators[0], role: 'Режиссёр' },
                 { id: 2, creator: dataCreators[1], role: 'Актёр' },
@@ -761,6 +780,7 @@ export const dataMoviesTop: { movie: IMovie, logo: string }[] = [
             description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad asperiores delectus deleniti dolor dolore est ex impedit magnam maiores nobis obcaecati perferendis porro provident quaerat ratione recusandae repudiandae sapiente tempora temporibus, totam ullam vel voluptas voluptates. Cum praesentium quos sit?',
             country: [{ id: 1, name: 'Россия' }],
             price: { id: 1, priceType: 'Бесплатно' },
+            feature: '',
             creators: [
                 { id: 1, creator: dataCreators[0], role: 'Режиссёр' },
                 { id: 2, creator: dataCreators[1], role: 'Актёр' },
@@ -797,6 +817,7 @@ export const dataMoviesTop: { movie: IMovie, logo: string }[] = [
             description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad asperiores delectus deleniti dolor dolore est ex impedit magnam maiores nobis obcaecati perferendis porro provident quaerat ratione recusandae repudiandae sapiente tempora temporibus, totam ullam vel voluptas voluptates. Cum praesentium quos sit?',
             country: [{ id: 1, name: 'Россия' }],
             price: { id: 1, priceType: 'Бесплатно' },
+            feature: '',
             creators: [
                 { id: 1, creator: dataCreators[0], role: 'Режиссёр' },
                 { id: 2, creator: dataCreators[1], role: 'Актёр' },
@@ -833,6 +854,7 @@ export const dataMoviesTop: { movie: IMovie, logo: string }[] = [
             description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad asperiores delectus deleniti dolor dolore est ex impedit magnam maiores nobis obcaecati perferendis porro provident quaerat ratione recusandae repudiandae sapiente tempora temporibus, totam ullam vel voluptas voluptates. Cum praesentium quos sit?',
             country: [{ id: 1, name: 'Россия' }],
             price: { id: 1, priceType: 'Бесплатно' },
+            feature: '',
             creators: [
                 { id: 1, creator: dataCreators[0], role: 'Режиссёр' },
                 { id: 2, creator: dataCreators[1], role: 'Актёр' },
@@ -869,6 +891,7 @@ export const dataMoviesTop: { movie: IMovie, logo: string }[] = [
             description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad asperiores delectus deleniti dolor dolore est ex impedit magnam maiores nobis obcaecati perferendis porro provident quaerat ratione recusandae repudiandae sapiente tempora temporibus, totam ullam vel voluptas voluptates. Cum praesentium quos sit?',
             country: [{ id: 1, name: 'Россия' }],
             price: { id: 1, priceType: 'Бесплатно' },
+            feature: '',
             creators: [
                 { id: 1, creator: dataCreators[0], role: 'Режиссёр' },
                 { id: 2, creator: dataCreators[1], role: 'Актёр' },
@@ -905,6 +928,7 @@ export const dataMoviesTop: { movie: IMovie, logo: string }[] = [
             description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad asperiores delectus deleniti dolor dolore est ex impedit magnam maiores nobis obcaecati perferendis porro provident quaerat ratione recusandae repudiandae sapiente tempora temporibus, totam ullam vel voluptas voluptates. Cum praesentium quos sit?',
             country: [{ id: 1, name: 'Россия' }],
             price: { id: 1, priceType: 'Бесплатно' },
+            feature: '',
             creators: [
                 { id: 1, creator: dataCreators[0], role: 'Режиссёр' },
                 { id: 2, creator: dataCreators[1], role: 'Актёр' },

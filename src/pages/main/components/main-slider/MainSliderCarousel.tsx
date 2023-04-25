@@ -9,7 +9,7 @@ const MainSliderCarousel: React.FC<PropsWithChildren<TProps>> = ({ children }) =
     const [activeIndex, setActiveIndex] = useState<number>(1)
     const [paused, setPaused] = useState<boolean>(false)
 
-    const sizeItem = window.innerWidth > 900 ? 1216 : 638
+    const sizeItem = window.innerWidth > 900 ? 1216 : window.innerWidth - 60
     const changeIndex = (newIndex: number): void => {
         if (newIndex < 0) {
             newIndex = React.Children.count(children) - 1

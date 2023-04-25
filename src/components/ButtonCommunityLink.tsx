@@ -3,12 +3,13 @@ import React from 'react'
 type TProps = {
     link: string
     icon: string
+    isMobile?: boolean
 }
 
-const ButtonCommunityLink: React.FC<TProps> = ({ link, icon }) => {
+const ButtonCommunityLink: React.FC<TProps> = ({ link, icon, isMobile }) => {
     return (
         <a
-            className="iviFooter__communityLink"
+            className={isMobile ? 'mobileNavigation__communityLink' : 'iviFooter__communityLink'}
             href={link}
             target="_blank"
         >

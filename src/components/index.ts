@@ -1,6 +1,5 @@
 export { default as ButtonLink } from './ButtonLink'
 export { default as ButtonCommunityLink } from './ButtonCommunityLink'
-export { default as MovieCard } from './film-card'
+export { default as MovieItem } from './movie-item'
 export { default as CompilationHeader } from './compilation/CompilationHeader'
-export { default as CompilationCarousel } from './compilation/CompilationCarousel'
 export { default as GalleryCarousel } from './gallery-carousel/GalleryCarousel'

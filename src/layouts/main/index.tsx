@@ -2,9 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { Outlet } from 'react-router-dom'
 
 import { addClass } from '../../utils/bodyClass'
-import { Header, HeaderSearchContext, HeaderSearchPopup } from './components/header'
-import { Footer } from './components/footer'
-import { TabBarPlate } from './components'
+import { HeaderSearchContext, HeaderSearchPopup } from './components/header'
+import { TabBarPlate, MobileNavigation, Footer, Header } from './components'
 
 const MainLayout: React.FC = () => {
 
@@ -12,6 +11,7 @@ const MainLayout: React.FC = () => {
 
     const [ isMobile, setIsMobile ] = useState<boolean>(window.innerWidth <= 900)
     const [ isSearch, setIsSearch ] = useState<boolean>(false)
+    const [ isOpenMobile, setIsOpenMobile ] = useState<boolean>(false)
     const handleResize = () => setIsMobile(window.innerWidth <= 900)
 
     useEffect(() => {
@@ -28,7 +28,8 @@ const MainLayout: React.FC = () => {
             <div className={'page-wrapper'}>
                 <Outlet />
             </div>
-            {isMobile && <TabBarPlate />}
+            {isOpenMobile && <MobileNavigation />}
+            {isMobile && <TabBarPlate toggleSearch={() => setIsSearch(!isSearch)} toggleMobileNav={() => setIsOpenMobile(!isOpenMobile)} />}
             <Footer />
         </>
     )
