@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/ivi-clone/static/css/main.f47da924.css",
-    "main.js": "/ivi-clone/static/js/main.069432f4.js",
+    "main.css": "/ivi-clone/static/css/main.62ebdfd8.css",
+    "main.js": "/ivi-clone/static/js/main.e1114f4f.js",
     "static/js/787.32e1ed32.chunk.js": "/ivi-clone/static/js/787.32e1ed32.chunk.js",
     "static/media/bg_image.png": "/ivi-clone/static/media/bg_image.171c64b4045c1a847271.png",
     "static/media/activ-logo.png?ver=": "/ivi-clone/static/media/activ-logo.c8ecbe531666f0822513.png",
@@ -19,12 +19,12 @@
     "static/media/smarttv.svg?ver=": "/ivi-clone/static/media/smarttv.b4b5d8ac8d91878fd3b8.svg",
     "static/media/mobile.svg?ver=": "/ivi-clone/static/media/mobile.e21b8ad8d2c0e48b9876.svg",
     "index.html": "/ivi-clone/index.html",
-    "main.f47da924.css.map": "/ivi-clone/static/css/main.f47da924.css.map",
-    "main.069432f4.js.map": "/ivi-clone/static/js/main.069432f4.js.map",
+    "main.62ebdfd8.css.map": "/ivi-clone/static/css/main.62ebdfd8.css.map",
+    "main.e1114f4f.js.map": "/ivi-clone/static/js/main.e1114f4f.js.map",
     "787.32e1ed32.chunk.js.map": "/ivi-clone/static/js/787.32e1ed32.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f47da924.css",
-    "static/js/main.069432f4.js"
+    "static/css/main.62ebdfd8.css",
+    "static/js/main.e1114f4f.js"
   ]
 }
