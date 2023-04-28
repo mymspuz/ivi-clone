@@ -2,7 +2,8 @@ import React from 'react'
 import { BrowserRouter, HashRouter, Route, Routes } from 'react-router-dom'
 
 import { AdminLayout, MainLayout } from '../layouts'
-import { AdminPage, ErrorPage, MainPage, MoviePage, MoviesPage, PersonPage } from '../pages'
+import { AdminPage, AuthPage, ErrorPage, MainPage, MoviePage, MoviesPage, PersonPage } from '../pages'
+import { PrivateRouter } from '../components'
 
 const MainRouter: React.FC = () => {
     return (
@@ -13,9 +14,12 @@ const MainRouter: React.FC = () => {
                     <Route path='movie' element={<MoviePage />} />
                     <Route path='movies' element={<MoviesPage />} />
                     <Route path='person' element={<PersonPage />} />
+                    <Route path='auth' element={<AuthPage />} />
                 </Route>
                 <Route element={<AdminLayout />}>
-                    <Route path='admin' element={<AdminPage />} />
+                    <Route element={<PrivateRouter allowedRoles={['ADMIN']} />}>
+                        <Route path='admin' element={<AdminPage />} />
+                    </Route>
                 </Route>
                 <Route path='*' element={<ErrorPage />} />
             </Routes>

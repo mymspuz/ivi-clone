@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from "react-router-dom";
 
 const Profile: React.FC = () => {
     const cards: { id: number, icon: string, title: string, desc: string, bulb: boolean }[] = [
@@ -37,11 +38,11 @@ const Profile: React.FC = () => {
                         <div className="dropdownProfile__sideContent">
                             <div className="dropdownProfile__sideContentInner">
                                 <div className="dropdownProfile__authSection">
-                                    <button className="nbl-button nbl-button_textAlign_center nbl-button_style_kioshi nbl-button_size_shinnok nbl-button_hasBadge_0">
+                                    <Link to={'auth'} className="nbl-button nbl-button_textAlign_center nbl-button_style_kioshi nbl-button_size_shinnok nbl-button_hasBadge_0">
                                         <div className="nbl-button__primaryText">
                                             Войти или зарегистрироваться
                                         </div>
-                                    </button>
+                                    </Link>
                                     <div className="dropdownProfile__dropdownLinksList dropdownLinksList">
                                         <div className="dropdownLinksList__list">
                                             <div className="dropdownLinksList__item">
