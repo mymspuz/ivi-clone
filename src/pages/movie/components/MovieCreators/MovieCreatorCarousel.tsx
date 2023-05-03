@@ -5,9 +5,10 @@ import { IMovieCreator } from '../../../../models/Movie'
 
 type TProps = {
     data: { creator: IMovieCreator, role: string }[]
+    handlerViewCreators: () => void
 }
 
-const MovieCreatorCarousel: React.FC<TProps> = ({ data }) => {
+const MovieCreatorCarousel: React.FC<TProps> = ({ data, handlerViewCreators }) => {
     return (
         <div className="gallery__carousel">
             <div className="gallery__viewport">
@@ -17,7 +18,7 @@ const MovieCreatorCarousel: React.FC<TProps> = ({ data }) => {
                         <div className="gallery__item gallery__item_more" data-test="persons_item_more">
                             <a
                                 className="nbl-moreTile nbl-moreTile_type_person nbl-moreTile_variant_natrus gallery__nbl-moreTile gallery__nbl-moreTile_fixedSlimPosterBlock"
-                                href="/watch/dublinskie-ubiystva/person"
+                                onClick={handlerViewCreators}
                             >
                                 <div className="nbl-moreTile__captionWrapper">
                                     <div className="nbl-moreTile__caption">Ещё</div>

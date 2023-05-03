@@ -18,7 +18,7 @@ const HeaderLogo: React.FC = () => {
                     <span className="headerLogo__text" itemProp="name">ivi</span>
                     <img
                         className="nbl-picture"
-                        src="../../../../assets/img/icons/reposition_iviLogoPlateRounded.svg"
+                        src="https://solea-parent.dfs.ivi.ru/picture/ea003d,ffffff/reposition_iviLogoPlateRounded.svg"
                         itemProp="logo"
                         alt="ivi"
                     />

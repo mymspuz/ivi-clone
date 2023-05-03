@@ -4,7 +4,12 @@ import { IMovieReview } from '../../../../models/Movie'
 import MovieReviewItem from './MovieReviewItem'
 import { dataReviews } from '../../../../data/dataMovie'
 
-const MovieReviews: React.FC = () => {
+
+type TProps = {
+    handlerViewComments: () => void
+}
+
+const MovieReviews: React.FC<TProps> = ({ handlerViewComments }) => {
 
     const reviews: IMovieReview[] = dataReviews
 
@@ -21,7 +26,7 @@ const MovieReviews: React.FC = () => {
                                             <a
                                                 className="nbl-link nbl-link_style_paxe extraLinks__nbl-link"
                                                 data-test="comments_title"
-                                                href="/watch/dublinskie-ubiystva/comments"
+                                                onClick={handlerViewComments}
                                             >
                                                 Отзывы
                                             </a>
@@ -32,11 +37,12 @@ const MovieReviews: React.FC = () => {
                                         <div className="extraLinks__subtitle">о сериале «Дублинские убийства»</div>
                                     </ul>
                                 </div>
-                                <a href="/watch/dublinskie-ubiystva/comments">
-                                    <button className="nbl-button nbl-button_textAlign_left nbl-button_style_ran nbl-button_size_cyrax nbl-button_hasBadge_0">
-                                        <div className="nbl-button__primaryText">Оставить отзыв</div>
-                                    </button>
-                                </a>
+                                <button
+                                    className="nbl-button nbl-button_textAlign_left nbl-button_style_ran nbl-button_size_cyrax nbl-button_hasBadge_0"
+                                    onClick={handlerViewComments}
+                                >
+                                    <div className="nbl-button__primaryText">Оставить отзыв</div>
+                                </button>
                             </div>
                         </header>
                         <div className="gallery gallery_ivi-carousel">
@@ -61,13 +67,6 @@ const MovieReviews: React.FC = () => {
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div className="comments__actions">
-                            <a href="/watch/dublinskie-ubiystva/comments">
-                                <button className="nbl-button nbl-button_textAlign_center nbl-button_style_ran nbl-button_size_cyrax nbl-button_hasBadge_0">
-                                    <div className="nbl-button__primaryText">Оставить отзыв</div>
-                                </button>
-                            </a>
                         </div>
                     </div>
                 </div>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useLocation, useNavigate, useSearchParams } from 'react-router-dom'
 
-import '../../assets/css/page-auth.css'
+// import '../../assets/css/page-auth.css'
 import { addClass } from '../../utils/bodyClass'
 import AuthForm from './AuthForm'
 import { getGoogleUrl, getVKUrl } from './utils'

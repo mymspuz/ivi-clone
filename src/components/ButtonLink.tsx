@@ -43,27 +43,26 @@ const ButtonLink: React.FC<TProps> = ({ title, link, addClass,  subTitle, icon, 
             :
                 handlerClick
                     ?
-                    <button
-                        className={resClass}
-                        onClick={handlerClick}
-                    >
-                        <div className="nbl-button__primaryText">
-                            {icon && <div className={`nbl-icon ${icon} nbl-button__nbl-icon`}></div>}
-                            {title}
-                        </div>
-                    </button>
-
+                        <button
+                            className={resClass}
+                            onClick={handlerClick}
+                        >
+                            <div className="nbl-button__primaryText">
+                                {icon && <div className={`nbl-icon ${icon} nbl-button__nbl-icon`}></div>}
+                                {title}
+                            </div>
+                        </button>
                     :
-                <a
-                    className={resClass}
-                    href={link}
-                    target="_blank"
-                >
-                    <div className="nbl-button__primaryText">
-                        {icon && <div className={`nbl-icon ${icon} nbl-button__nbl-icon`}></div>}
-                        {title}
-                    </div>
-                </a>
+                        <a
+                            className={resClass}
+                            href={link}
+                            target="_blank"
+                        >
+                            <div className="nbl-button__primaryText">
+                                {icon && <div className={`nbl-icon ${icon} nbl-button__nbl-icon`}></div>}
+                                {title}
+                            </div>
+                        </a>
     )
 }
 

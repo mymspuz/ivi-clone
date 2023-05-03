@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 import { IUIMenu } from '../../../../models/uiMenu'
 
@@ -15,9 +15,15 @@ type TProps = {
 }
 
 const MobileMovies: React.FC<TProps> = ({ title, firstColumnData, secondColumnData, widgetData }) => {
+
+    const [ isOpen, setIsOpen ] = useState<boolean>(false)
+
     return (
-        <div className="mobileNavigation__item">
-            <div className="nbl-arrowButton nbl-arrowButton_variation_zozon nbl-arrowButton_collapsed">
+        <div className={`mobileNavigation__item${isOpen ? ' mobileNavigation__item_expanded' : ''}`}>
+            <div
+                className={`nbl-arrowButton nbl-arrowButton_variation_zozon ${isOpen ? 'nbl-arrowButton_expanded' : 'nbl-arrowButton_collapsed'}`}
+                onClick={() => setIsOpen(!isOpen)}
+            >
                 <div className="nbl-icon nbl-icon_films_20 nbl-icon_customExtraIcon nbl-arrowButton__nbl-icon nbl-arrowButton__nbl-icon_customExtraIcon"></div>
                 <div className="nbl-arrowButton__caption">{title.main}</div>
                 <div className="nbl-icon nbl-icon_arrowIcon nbl-arrowButton__nbl-icon nbl-arrowButton__nbl-icon_arrowIcon"></div>

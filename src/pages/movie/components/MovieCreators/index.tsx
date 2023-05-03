@@ -4,7 +4,11 @@ import { CompilationHeader } from '../../../../components'
 import MovieCreatorCarousel from './MovieCreatorCarousel'
 import { dataMovies } from '../../../../data/dataMovie'
 
-const MovieCreators = () => {
+type TProps = {
+    handlerViewCreators: () => void
+}
+
+const MovieCreators: React.FC<TProps> = ({ handlerViewCreators }) => {
 
     const creators = dataMovies[0].creators
 
@@ -15,7 +19,7 @@ const MovieCreators = () => {
                     <div className="creatorsList contentCard__creatorsList">
                         <div className="gallery gallery_creators gallery gallery_mGap pageSection__gallery">
                             <CompilationHeader title={'Актёры и создатели'} />
-                            <MovieCreatorCarousel data={creators} />
+                            <MovieCreatorCarousel data={creators} handlerViewCreators={handlerViewCreators} />
                         </div>
                     </div>
                 </div>

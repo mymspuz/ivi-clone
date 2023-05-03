@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import '../../assets/css/page-details.css'
 import { addClass } from '../../utils/bodyClass'
@@ -10,7 +10,7 @@ import {
     MovieCreators,
     MovieAdditional,
     MovieReviews,
-    MovieAllDevice
+    MovieAllDevice, MovieComments, MovieAllCreators
 } from './components'
 
 const MoviePage: React.FC = () => {
@@ -24,6 +24,9 @@ const MoviePage: React.FC = () => {
         { title: 'Детективы', link: '/' },
     ]
 
+    const [ viewComments, setViewComments ] = useState<boolean>(false)
+    const [ viewCreators, setViewCreators ] = useState<boolean>(false)
+
     return (
         <>
             <MovieBreadCrumbsHeader breadcrumbs={breadcrumbsHeader} />
@@ -31,11 +34,13 @@ const MoviePage: React.FC = () => {
             <MovieMainSection />
             <div className="contentCard__underside">
                 <MovieCompilation title={'С сериалом «Дублинские убийства» смотрят'} />
-                <MovieCreators />
+                <MovieCreators handlerViewCreators={() => setViewCreators(true)} />
                 <MovieAdditional />
-                <MovieReviews />
+                <MovieReviews handlerViewComments={() => setViewComments(true)}/>
                 <MovieAllDevice />
             </div>
+            {viewComments && <MovieComments handlerViewComments={() => setViewComments(false)} />}
+            {viewCreators && <MovieAllCreators handlerViewCreators={() => setViewCreators(false)} />}
         </>
     )
 }

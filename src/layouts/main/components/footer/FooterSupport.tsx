@@ -5,7 +5,7 @@ import FooterQuestions from './FooterQuestions'
 
 const FooterSupport = () => {
 
-    const [phone, setPhone] = useState<boolean>(false)
+    const [ phone, setPhone ] = useState<boolean>(false)
 
     return (
         <div className="iviFooter__column iviFooter__column_narrow">
