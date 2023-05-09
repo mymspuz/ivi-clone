@@ -1,13 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
-type TProps = {
-    breadcrumbs: {
-        title: string
-        link: string
-    }[]
-}
+import { toCapitalize } from '../../../utils/str'
+import { MovieContext } from '../index'
 
-const MovieBreadCrumbsHeader: React.FC<TProps> = ({ breadcrumbs }) => {
+const MovieBreadCrumbsHeader: React.FC = () => {
+
+    const { genres } = useContext(MovieContext)
+
     return (
         <div className="watchHeader contentCard__watchHeader">
             <div className="headerBar headerBar_playerPage watchHeader__headerBar">
@@ -18,19 +17,19 @@ const MovieBreadCrumbsHeader: React.FC<TProps> = ({ breadcrumbs }) => {
                                 <ul className="breadCrumbs breadCrumbs_modern headerBar__breadCrumbs"
                                     data-test="bread_crumbs_block"
                                 >
-                                    {breadcrumbs.map((breadcrumb, index) => (
+                                    {genres.map(breadcrumb => (
                                         <li
-                                            key={index}
+                                            key={breadcrumb.id}
                                             className="breadCrumbs__item"
                                             data-test="bread_crumbs_item"
                                             itemProp="itemListElement"
                                         >
                                             <a
                                                 className="nbl-link nbl-link_style_wovou breadCrumbs__nbl-link"
-                                                href={breadcrumb.link}
+                                                href={`movies/?genre=${breadcrumb.name}`}
                                                 itemProp="item"
                                             >
-                                                <span itemProp="name">{breadcrumb.title}</span>
+                                                <span itemProp="name">{toCapitalize(breadcrumb.name)}</span>
                                             </a>
                                         </li>
                                     ))}

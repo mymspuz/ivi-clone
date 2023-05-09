@@ -21,6 +21,7 @@ export interface IMovie {
     quality: { id: number, name: string }[]                                     // Доступное качество видео
     voice: { id: number, voiceType: 'voice' | 'subtitle', language: string }[]  // Озвучка
     rating: { valueInt: number, valueFract: number }                            // Рейтинг - целая часть и дробная
+    voites: number                                                              // Количество оценок
     detailRating: { name: string, value: number }[]                             // Детальный рейтинг по различным видам
     trailer: string                                                             // Трейлер
     poster: string                                                              // Постер
@@ -31,8 +32,9 @@ export interface IMovie {
     creators: {
         id: number,
         creator: IMovieCreator,
-        role: 'Режиссёр' | 'Актёр' | 'Актёр дубляжа' } []                       // Актеры и создатели
+        role: string } []                                                       // Актеры и создатели 'Режиссёр' | 'Актёр' | 'Актёр дубляжа'
     reviews: IMovieReview[]                                                     // Комментарии
+    lookWith?: IMovie[]                                                         // С этим фильмом смотрят
 }
 
 export interface IMovieCreator {
@@ -50,4 +52,51 @@ export interface IMovieReview {
     content: string
     date: Date
     vote: number
+}
+
+export interface IMovieResponse {
+    film_id: number
+    name: string
+    alternativeName: string | null
+    year: number
+    type?: string
+    description?: string
+    shortDescription?: string
+    slogan?: string | null
+    kprating: number
+    kpvotes?: number
+    movieLength: number
+    ageRating?: number
+    trailer?: string
+    poster: string
+    genres: string[]
+    countries: string[]
+    staff?: IMovieCreatorResponse[]
+}
+
+export interface IMovieDetailResponse {
+    film: IMovieResponse
+    lookWith: IMovieResponse[]
+}
+
+export interface IMovieCreatorResponse {
+    person_id: number
+    name: string
+    enName: string
+    photo: string
+    profession: string
+    description: string | null
+    enProfession: string
+}
+
+export interface IMovieResponseMainPage {
+    top10: IMovieResponse[]
+    cartoons: IMovieResponse[]
+    foreign: IMovieResponse[]
+}
+
+export interface IMovieMainPage {
+    top10: IMovie[]
+    cartoons: IMovie[]
+    foreign: IMovie[]
 }

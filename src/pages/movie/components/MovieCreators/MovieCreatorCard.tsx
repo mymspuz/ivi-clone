@@ -4,14 +4,21 @@ import { IMovieCreator } from '../../../../models/Movie'
 
 type TProps = {
     data: { creator: IMovieCreator, role: string }
+    size?: {
+        width: number,
+        padding: number
+    }
 }
 
-const MovieCreatorCard: React.FC<TProps> = ({ data }) => {
+const MovieCreatorCard: React.FC<TProps> = ({ data, size }) => {
 
     const nameParts = data.creator.name.rus.split(' ')
 
     return (
-        <div className="gallery__item" data-test="persons_item">
+        <div
+            className="ivi-carousel-item"
+            style={{ width: `${size?.width}px`, paddingRight: `${size?.padding}px` }}
+        >
             <a
                 className="fixedSlimPosterBlock fixedSlimPosterBlock_type_person gallery__fixedSlimPosterBlock"
                 href={'#'}

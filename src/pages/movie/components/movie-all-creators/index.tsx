@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
 import { IMovieCreator } from '../../../../models/Movie'
-import {dataCreators, dataMovies} from '../../../../data/dataMovie'
 import MovieCreatorsList from './MovieCreatorsList'
 import CommentMovieCard from '../movie-comments/CommentMovieCard'
+import { MovieContext } from '../../index'
 
 type TProps = {
     handlerViewCreators: () => void
@@ -11,11 +11,18 @@ type TProps = {
 
 const MovieAllCreators: React.FC<TProps> = ({ handlerViewCreators }) => {
 
-    const data: { title: string, creators: IMovieCreator[] }[] = [
-        { title: 'Режиссёр', creators: [dataCreators[0]] },
-        { title: 'Актёры', creators: dataCreators.slice(1, 5) },
-        { title: 'Актёры дубляжа', creators: dataCreators.slice(5, 11) }
-    ]
+    const data = useContext(MovieContext)
+    const title = `${data.name} (${data.movieType} ${data.yearRelease.start})`
+
+    const res: { id: number, role: string, creators: IMovieCreator[] }[] = []
+    const creators = data.creators.reduce((acc, currentValue) => {
+        const findEl = acc.filter(a => a.role === currentValue.role)
+        findEl.length
+            ? findEl[0].creators.push(currentValue.creator)
+            : acc.push({ id: currentValue.id, role: currentValue.role, creators: [currentValue.creator] })
+        return acc
+    }, res)
+    creators.sort((a, b) => a.creators.length - b.creators.length)
 
     return (
         <div className="fullscreen-popup fullscreen-popup_active fullscreen-popup_has-close-view-button">
@@ -34,7 +41,7 @@ const MovieAllCreators: React.FC<TProps> = ({ handlerViewCreators }) => {
                     <div className="movie-extras fullscreen-popup__movie-creators modal-view modal-view_finish">
                         <div className="movie-extras__container">
                             <div className="movie-extras__container-inner">
-                                <h1 className="movie-extras__title">Сын (фильм 2022)</h1>
+                                <h1 className="movie-extras__title">{title}</h1>
                                 <div className="movie-extras__ivi-tabs">
                                     <div className="ivi-tabs">
                                         <div className="ivi-tabs__list-wrapper">
@@ -52,10 +59,14 @@ const MovieAllCreators: React.FC<TProps> = ({ handlerViewCreators }) => {
                                     </div>
                                 </div>
                                 <div className="movie-extras__content movie-extras__content_creators">
-                                    {data.map(item => <MovieCreatorsList key={item.title} data={item} />)}
+                                    {creators.map(item =>
+                                        <MovieCreatorsList
+                                            key={item.id}
+                                            data={{ title: item.role, creators: item.creators}} />
+                                    )}
                                 </div>
                             </div>
-                            <CommentMovieCard data={dataMovies[0]} />
+                            <CommentMovieCard />
                         </div>
                     </div>
                 </div>

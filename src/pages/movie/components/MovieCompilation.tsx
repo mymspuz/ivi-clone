@@ -1,15 +1,13 @@
-import React from 'react'
+import React, {useContext} from 'react'
 
 import { CompilationHeader, GalleryCarousel, MovieItem } from '../../../components'
-import { dataMovies } from '../../../data/dataMovie'
+import { MovieContext } from '../index'
 
-type TProps = {
-    title: string
-}
+const MovieCompilation: React.FC = () => {
 
-const MovieCompilation: React.FC<TProps> = ({ title }) => {
+    const data = useContext(MovieContext)
+    const title = `С ${data.movieType} ${data.name} смотрят`
 
-    const animations = dataMovies
 
     return (
         <section className="pageSection pageSection_detailsSelection contentCard__pageSection contentCard__pageSection_detailsSelection" id="relatedList">
@@ -17,9 +15,11 @@ const MovieCompilation: React.FC<TProps> = ({ title }) => {
                 <div className="pageSection__container-inner">
                     <div className="gallery gallery gallery_dark gallery_ivi-carousel pageSection__gallery">
                         <CompilationHeader title={title} />
-                        <GalleryCarousel type={'big'} size={{ width: 153.12, padding: 24 }} viewMobile={true} >
-                            {animations && animations.map(item => <MovieItem key={item.id} data={item} />)}
-                        </GalleryCarousel>
+                        {data.lookWith &&
+                            <GalleryCarousel type={'big'} size={{ width: 153.12, padding: 24 }} viewMobile={true} >
+                                {data.lookWith.map(item => <MovieItem key={item.id} data={item} />)}
+                            </GalleryCarousel>
+                        }
                     </div>
                 </div>
             </div>

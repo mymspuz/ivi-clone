@@ -1,12 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
-import { IMovie } from '../../../../models/Movie'
+import { MovieContext } from '../../index'
 
-type TProps = {
-    data: IMovie
-}
+const CommentMovieCard: React.FC = () => {
 
-const CommentMovieCard: React.FC<TProps> = ({ data }) => {
+    const data = useContext(MovieContext)
+
     return (
         <div className="aside-poster-block movie-extras__aside-poster-block">
             <a

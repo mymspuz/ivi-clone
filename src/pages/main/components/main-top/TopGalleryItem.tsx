@@ -3,7 +3,7 @@ import React from 'react'
 import { IMovie } from '../../../../models/Movie'
 
 type TProps = {
-    data: { id: number, movie: IMovie, logo: string },
+    data: { place: number, movie: IMovie, logo: string },
     size?: {
         width: number
         padding: number
@@ -12,7 +12,7 @@ type TProps = {
 
 const TopGalleryItem: React.FC<TProps> = ({ data, size }) => {
 
-    const { id, movie, logo} = data
+    const { place, movie, logo} = data
 
     return (
         <div
@@ -42,12 +42,12 @@ const TopGalleryItem: React.FC<TProps> = ({ data, size }) => {
                                 />
                             </div>
                             <div className="nbl-poster__placeNumber">
-                                {id < 10
+                                {place < 10
                                     ?
                                         <img
                                             className="nbl-picture nbl-poster__nbl-picture"
-                                            src={`https://solea-parent.dfs.ivi.ru/picture/bypass/number${id}.svg`}
-                                            alt={`top-${id}`}
+                                            src={`https://solea-parent.dfs.ivi.ru/picture/bypass/number${place}.svg`}
+                                            alt={`top-${place}`}
                                         />
                                     :
                                         <>

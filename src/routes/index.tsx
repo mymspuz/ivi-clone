@@ -11,7 +11,7 @@ const MainRouter: React.FC = () => {
             <Routes>
                 <Route path='/' element={<MainLayout />}>
                     <Route index element={<MainPage />} />
-                    <Route path='movie' element={<MoviePage />} />
+                    <Route path='movie/:id' element={<MoviePage />} />
                     <Route path='movies' element={<MoviesPage />} />
                     <Route path='person' element={<PersonPage />} />
                     <Route path='auth' element={<AuthPage />} />

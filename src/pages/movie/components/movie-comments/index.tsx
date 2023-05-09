@@ -102,7 +102,7 @@ const MovieComments: React.FC<TProps> = ({ handlerViewComments }) => {
                                     </button>
                                 </div>
                             </div>
-                            <CommentMovieCard data={dataMovies[0]}/>
+                            <CommentMovieCard />
                         </div>
                     </div>
                 </div>

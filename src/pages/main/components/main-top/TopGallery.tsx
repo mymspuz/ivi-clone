@@ -1,18 +1,19 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
-import { dataMoviesTop } from '../../../../data/dataMovie'
 import { GalleryCarousel } from '../../../../components'
 import TopGalleryItem from './TopGalleryItem'
+import { MainPageContext } from '../../index'
 
 
 const TopGallery: React.FC = () => {
 
-    const tops = dataMoviesTop
+    const data = useContext(MainPageContext)
+    const tops = data.top10
 
     return (
         <GalleryCarousel type={'big'} size={{ width: 224, padding: 24 }} viewMobile={true}>
             {tops && tops.map((top, index) =>
-                <TopGalleryItem key={top.movie.id} data={{ id: index + 1, ...top }} />)}
+                <TopGalleryItem key={top.id} data={{ place: index + 1, logo: '', movie: top }} />)}
         </GalleryCarousel>
     )
 }

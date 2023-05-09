@@ -1,34 +1,31 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
 import MovieCreatorCard from './MovieCreatorCard'
-import { IMovieCreator } from '../../../../models/Movie'
+import GalleryCarousel from '../../../../components/gallery-carousel/GalleryCarousel'
+import { MovieContext } from '../../index'
 
 type TProps = {
-    data: { creator: IMovieCreator, role: string }[]
     handlerViewCreators: () => void
 }
 
-const MovieCreatorCarousel: React.FC<TProps> = ({ data, handlerViewCreators }) => {
+const MovieCreatorCarousel: React.FC<TProps> = ({ handlerViewCreators }) => {
+
+    const data = useContext(MovieContext)
+
     return (
-        <div className="gallery__carousel">
-            <div className="gallery__viewport">
-                <div className="gallery__viewport-inner">
-                    <div className="gallery__list gallery__list_fixedSlimPosterBlock gallery__list_type_person">
-                        {data && data.map(creator => <MovieCreatorCard key={creator.creator.id} data={creator} />)}
-                        <div className="gallery__item gallery__item_more" data-test="persons_item_more">
-                            <a
-                                className="nbl-moreTile nbl-moreTile_type_person nbl-moreTile_variant_natrus gallery__nbl-moreTile gallery__nbl-moreTile_fixedSlimPosterBlock"
-                                onClick={handlerViewCreators}
-                            >
-                                <div className="nbl-moreTile__captionWrapper">
-                                    <div className="nbl-moreTile__caption">Ещё</div>
-                                </div>
-                            </a>
-                        </div>
+        <GalleryCarousel type={'big'} size={{ width: 88, padding: 24 }} viewMobile={true}>
+            {data.creators && data.creators.map(creator => <MovieCreatorCard key={creator.creator.id} data={creator} />)}
+            <div className="ivi-carousel-item" style={{ width: `${88}px`, paddingRight: `${24}px` }}>
+                <a
+                    className="nbl-moreTile nbl-moreTile_type_person nbl-moreTile_variant_natrus gallery__nbl-moreTile gallery__nbl-moreTile_fixedSlimPosterBlock"
+                    onClick={handlerViewCreators}
+                >
+                    <div className="nbl-moreTile__captionWrapper">
+                        <div className="nbl-moreTile__caption">Ещё</div>
                     </div>
-                </div>
+                </a>
             </div>
-        </div>
+        </GalleryCarousel>
     )
 }
 

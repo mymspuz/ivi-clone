@@ -1,6 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
+
+import { MovieContext } from '../index'
 
 const MovieAllDevice: React.FC = () => {
+
+    const data = useContext(MovieContext)
+
     return (
         <section className="pageSection contentCard__pageSection">
             <div className="pageSection__container">
@@ -9,7 +14,7 @@ const MovieAllDevice: React.FC = () => {
                         <div className="watchAllDevices__wrapper">
                             <div className="watchAllDevices__appeal">
                                 <h2 className="watchAllDevices__title">
-                                    Cмотреть «Дублинские убийства» на всех устройствах
+                                    Cмотреть {data.name} на всех устройствах
                                 </h2>
                                 <p className="watchAllDevices__subtitle">
                                     Приложение доступно для скачивания на iOS, Android, SmartTV и приставках

@@ -104,6 +104,7 @@ export const dataMovies: IMovie[] = [
         quality: [],
         voice: [{ id: 1, voiceType: 'voice', language: 'Рус' }],
         rating: { valueInt: 8, valueFract: 4 },
+        voites: 0,
         detailRating: [
             { name: 'сюжет', value: 59 },
             { name: 'актёры', value: 65 },
@@ -138,6 +139,7 @@ export const dataMovies: IMovie[] = [
         quality: [],
         voice: [{ id: 1, voiceType: 'voice', language: 'Рус' }],
         rating: { valueInt: 8, valueFract: 4 },
+        voites: 0,
         detailRating: [
             { name: 'сюжет', value: 59 },
             { name: 'актёры', value: 65 },
@@ -172,6 +174,7 @@ export const dataMovies: IMovie[] = [
         quality: [],
         voice: [{ id: 1, voiceType: 'voice', language: 'Рус' }],
         rating: { valueInt: 8, valueFract: 4 },
+        voites: 0,
         detailRating: [
             { name: 'сюжет', value: 59 },
             { name: 'актёры', value: 65 },
@@ -206,6 +209,7 @@ export const dataMovies: IMovie[] = [
         quality: [],
         voice: [{ id: 1, voiceType: 'voice', language: 'Рус' }],
         rating: { valueInt: 8, valueFract: 4 },
+        voites: 0,
         detailRating: [
             { name: 'сюжет', value: 59 },
             { name: 'актёры', value: 65 },
@@ -240,6 +244,7 @@ export const dataMovies: IMovie[] = [
         quality: [],
         voice: [{ id: 1, voiceType: 'voice', language: 'Рус' }],
         rating: { valueInt: 8, valueFract: 4 },
+        voites: 0,
         detailRating: [
             { name: 'сюжет', value: 59 },
             { name: 'актёры', value: 65 },
@@ -274,6 +279,7 @@ export const dataMovies: IMovie[] = [
         quality: [],
         voice: [{ id: 1, voiceType: 'voice', language: 'Рус' }],
         rating: { valueInt: 8, valueFract: 4 },
+        voites: 0,
         detailRating: [
             { name: 'сюжет', value: 59 },
             { name: 'актёры', value: 65 },
@@ -308,6 +314,7 @@ export const dataMovies: IMovie[] = [
         quality: [],
         voice: [{ id: 1, voiceType: 'voice', language: 'Рус' }],
         rating: { valueInt: 8, valueFract: 4 },
+        voites: 0,
         detailRating: [
             { name: 'сюжет', value: 59 },
             { name: 'актёры', value: 65 },
@@ -342,6 +349,7 @@ export const dataMovies: IMovie[] = [
         quality: [],
         voice: [{ id: 1, voiceType: 'voice', language: 'Рус' }],
         rating: { valueInt: 8, valueFract: 4 },
+        voites: 0,
         detailRating: [
             { name: 'сюжет', value: 59 },
             { name: 'актёры', value: 65 },
@@ -376,6 +384,7 @@ export const dataMovies: IMovie[] = [
         quality: [],
         voice: [{ id: 1, voiceType: 'voice', language: 'Рус' }],
         rating: { valueInt: 8, valueFract: 4 },
+        voites: 0,
         detailRating: [
             { name: 'сюжет', value: 59 },
             { name: 'актёры', value: 65 },
@@ -410,6 +419,7 @@ export const dataMovies: IMovie[] = [
         quality: [],
         voice: [{ id: 1, voiceType: 'voice', language: 'Рус' }],
         rating: { valueInt: 8, valueFract: 4 },
+        voites: 0,
         detailRating: [
             { name: 'сюжет', value: 59 },
             { name: 'актёры', value: 65 },
@@ -444,6 +454,7 @@ export const dataMovies: IMovie[] = [
         quality: [],
         voice: [{ id: 1, voiceType: 'voice', language: 'Рус' }],
         rating: { valueInt: 8, valueFract: 4 },
+        voites: 0,
         detailRating: [
             { name: 'сюжет', value: 59 },
             { name: 'актёры', value: 65 },
@@ -478,6 +489,7 @@ export const dataMovies: IMovie[] = [
         quality: [],
         voice: [{ id: 1, voiceType: 'voice', language: 'Рус' }],
         rating: { valueInt: 8, valueFract: 4 },
+        voites: 0,
         detailRating: [
             { name: 'сюжет', value: 59 },
             { name: 'актёры', value: 65 },
@@ -512,6 +524,7 @@ export const dataMovies: IMovie[] = [
         quality: [],
         voice: [{ id: 1, voiceType: 'voice', language: 'Рус' }],
         rating: { valueInt: 8, valueFract: 4 },
+        voites: 0,
         detailRating: [
             { name: 'сюжет', value: 59 },
             { name: 'актёры', value: 65 },
@@ -546,6 +559,7 @@ export const dataMovies: IMovie[] = [
         quality: [],
         voice: [{ id: 1, voiceType: 'voice', language: 'Рус' }],
         rating: { valueInt: 8, valueFract: 4 },
+        voites: 0,
         detailRating: [
             { name: 'сюжет', value: 59 },
             { name: 'актёры', value: 65 },
@@ -584,6 +598,7 @@ export const dataMoviesTop: { movie: IMovie, logo: string }[] = [
             quality: [],
             voice: [{ id: 1, voiceType: 'voice', language: 'Рус' }],
             rating: { valueInt: 8, valueFract: 4 },
+            voites: 0,
             detailRating: [
                 { name: 'сюжет', value: 59 },
                 { name: 'актёры', value: 65 },
@@ -621,6 +636,7 @@ export const dataMoviesTop: { movie: IMovie, logo: string }[] = [
             quality: [],
             voice: [{ id: 1, voiceType: 'voice', language: 'Рус' }],
             rating: { valueInt: 8, valueFract: 4 },
+            voites: 0,
             detailRating: [
                 { name: 'сюжет', value: 59 },
                 { name: 'актёры', value: 65 },
@@ -658,6 +674,7 @@ export const dataMoviesTop: { movie: IMovie, logo: string }[] = [
             quality: [],
             voice: [{ id: 1, voiceType: 'voice', language: 'Рус' }],
             rating: { valueInt: 8, valueFract: 4 },
+            voites: 0,
             detailRating: [
                 { name: 'сюжет', value: 59 },
                 { name: 'актёры', value: 65 },
@@ -695,6 +712,7 @@ export const dataMoviesTop: { movie: IMovie, logo: string }[] = [
             quality: [],
             voice: [{ id: 1, voiceType: 'voice', language: 'Рус' }],
             rating: { valueInt: 8, valueFract: 4 },
+            voites: 0,
             detailRating: [
                 { name: 'сюжет', value: 59 },
                 { name: 'актёры', value: 65 },
@@ -732,6 +750,7 @@ export const dataMoviesTop: { movie: IMovie, logo: string }[] = [
             quality: [],
             voice: [{ id: 1, voiceType: 'voice', language: 'Рус' }],
             rating: { valueInt: 8, valueFract: 4 },
+            voites: 0,
             detailRating: [
                 { name: 'сюжет', value: 59 },
                 { name: 'актёры', value: 65 },
@@ -769,6 +788,7 @@ export const dataMoviesTop: { movie: IMovie, logo: string }[] = [
             quality: [],
             voice: [{ id: 1, voiceType: 'voice', language: 'Рус' }],
             rating: { valueInt: 8, valueFract: 4 },
+            voites: 0,
             detailRating: [
                 { name: 'сюжет', value: 59 },
                 { name: 'актёры', value: 65 },
@@ -806,6 +826,7 @@ export const dataMoviesTop: { movie: IMovie, logo: string }[] = [
             quality: [],
             voice: [{ id: 1, voiceType: 'voice', language: 'Рус' }],
             rating: { valueInt: 8, valueFract: 4 },
+            voites: 0,
             detailRating: [
                 { name: 'сюжет', value: 59 },
                 { name: 'актёры', value: 65 },
@@ -843,6 +864,7 @@ export const dataMoviesTop: { movie: IMovie, logo: string }[] = [
             quality: [],
             voice: [{ id: 1, voiceType: 'voice', language: 'Рус' }],
             rating: { valueInt: 8, valueFract: 4 },
+            voites: 0,
             detailRating: [
                 { name: 'сюжет', value: 59 },
                 { name: 'актёры', value: 65 },
@@ -880,6 +902,7 @@ export const dataMoviesTop: { movie: IMovie, logo: string }[] = [
             quality: [],
             voice: [{ id: 1, voiceType: 'voice', language: 'Рус' }],
             rating: { valueInt: 8, valueFract: 4 },
+            voites: 0,
             detailRating: [
                 { name: 'сюжет', value: 59 },
                 { name: 'актёры', value: 65 },
@@ -917,6 +940,7 @@ export const dataMoviesTop: { movie: IMovie, logo: string }[] = [
             quality: [],
             voice: [{ id: 1, voiceType: 'voice', language: 'Рус' }],
             rating: { valueInt: 8, valueFract: 4 },
+            voites: 0,
             detailRating: [
                 { name: 'сюжет', value: 59 },
                 { name: 'актёры', value: 65 },

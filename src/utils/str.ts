@@ -1,0 +1,1 @@
+export const toCapitalize = (src: string): string => src.charAt(0).toUpperCase() + src.slice(1).toLowerCase()
