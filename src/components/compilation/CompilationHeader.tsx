@@ -9,8 +9,6 @@ const CompilationHeader: React.FC<TProps> = ({ title }) => {
         <div className="gallery__blockHeader">
             <a
                 className="nbl-blockHeader nbl-blockHeader_composition_tebhat nbl-blockHeader_arrowMode_insideTitle nbl-blockHeader_size_zylros nbl-blockHeader_fullWidth_false"
-                data-test="collection_header"
-                href="/collections/dobryie-multserialyi"
             >
                 <div className="nbl-blockHeader__textBlock">
                     <div className="nbl-blockHeader__textBlockContent">

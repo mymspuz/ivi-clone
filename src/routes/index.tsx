@@ -13,7 +13,7 @@ const MainRouter: React.FC = () => {
                     <Route index element={<MainPage />} />
                     <Route path='movie/:id' element={<MoviePage />} />
                     <Route path='movies' element={<MoviesPage />} />
-                    <Route path='person' element={<PersonPage />} />
+                    <Route path='person/:id' element={<PersonPage />} />
                     <Route path='auth' element={<AuthPage />} />
                 </Route>
                 <Route element={<AdminLayout />}>

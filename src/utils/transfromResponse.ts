@@ -90,3 +90,16 @@ export const transformPerson = (src: IMovieCreatorResponse[]): { id: number, cre
         }
     })
 }
+
+export const transformPersonDetail = (src: IMovieCreatorResponse): { creator: IMovieCreator, movies: IMovie[] } => {
+    return {
+        creator: {
+            id: src.person_id,
+            name: { rus: src.name, eng: src.enName },
+            poster: src.photo,
+            description: src.description ? src.description: '',
+            biography: src.description ? src.description: ''
+        },
+        movies: src.films ? transformMovies(src.films) : []
+    }
+}

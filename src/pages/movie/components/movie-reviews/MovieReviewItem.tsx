@@ -4,9 +4,10 @@ import { IMovieReview } from '../../../../models/Movie'
 
 type TProps = {
     review: IMovieReview
+    handlerViewComments: () => void
 }
 
-const MovieReviewItem: React.FC<TProps> = ({ review }) => {
+const MovieReviewItem: React.FC<TProps> = ({ review, handlerViewComments }) => {
     return (
         <div
             className="ivi-carousel-item"
@@ -14,7 +15,7 @@ const MovieReviewItem: React.FC<TProps> = ({ review }) => {
         >
             <a
                 className="ugcTile gallery__ugcTile"
-                href="/watch/dublinskie-ubiystva/comments?commentId=778391"
+                onClick={handlerViewComments}
             >
                 <div className="vote vote_status_positive ugcTile__vote">
                     <button className="vote__buttonUp" type="button">

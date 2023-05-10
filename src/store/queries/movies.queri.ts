@@ -8,7 +8,7 @@ import { transformMovieDetail, transformMovies } from '../../utils/transfromResp
 export const moviesApi = createApi({
     reducerPath: 'moviesApi',
     baseQuery: fetchBaseQuery({
-        baseUrl: `http://localhost:5000/movies/`,
+        baseUrl: `${process.env.REACT_APP_HOST_SERVER}/movies/`,
         prepareHeaders: (headers, { getState }) => {
             const token = (getState() as RootState).auth.token
             if (token) {

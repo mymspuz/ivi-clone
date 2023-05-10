@@ -1,17 +1,18 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
-type TProps = {
-    biography: string
-}
+import { PersonContext } from '../index'
 
-const PersonBiography: React.FC<TProps> = ({ biography }) => {
+const PersonBiography: React.FC = () => {
+
+    const { creator } = useContext(PersonContext)
+
     return (
         <div id="biography" className="person__personBiography personBiography">
             <div className="personBiography__title">Биография</div>
             <div className="clause clause_is-native personBiography__clause">
                 <div className="clause__text is-truncated">
                     <div className="clause__text-inner hidden-children">
-                        {biography}
+                        {creator.biography}
                     </div>
                     <span className="clause__toggle">Читать дальше</span>
                 </div>

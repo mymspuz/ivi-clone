@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { IMovie } from '../../../../models/Movie'
+import { MOVIE_URL } from '../../../../constants/urls'
 
 type TProps = {
     data: { place: number, movie: IMovie, logo: string },
@@ -21,7 +22,7 @@ const TopGalleryItem: React.FC<TProps> = ({ data, size }) => {
         >
             <a
                 className="nbl-posterUprightBlock nbl-posterUprightBlock_type_godun nbl-posterUprightBlock_status_default home__nbl-posterUprightBlock"
-                href={'#'}
+                href={`${MOVIE_URL}${data.movie.id}`}
             >
                 <div className="nbl-posterUprightBlock__imageSection">
                     <div className="nbl-poster nbl-poster_type_godun nbl-posterUprightBlock__nbl-poster">

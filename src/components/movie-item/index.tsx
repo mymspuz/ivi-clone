@@ -1,5 +1,6 @@
 import React from 'react'
 
+import { MOVIE_URL } from '../../constants/urls'
 import { IMovie } from '../../models/Movie'
 
 type TProps = {
@@ -25,7 +26,7 @@ const MovieItem: React.FC<TProps> = ({ data, size }) => {
             style={{ width: `${size?.width}px`, paddingRight: `${size?.padding}px` }}
         >
             <a
-                href={'#'}
+                href={`${MOVIE_URL}${data.id}`}
                 data-content-id={data.id}
                 className="nbl-slimPosterBlock nbl-slimPosterBlock_type_poster nbl-slimPosterBlock_status_default nbl-slimPosterBlock_iconStatus_none nbl-slimPosterBlock_available home__nbl-slimPosterBlock"
             >

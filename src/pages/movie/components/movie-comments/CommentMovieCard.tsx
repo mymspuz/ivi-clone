@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 
 import { MovieContext } from '../../index'
+import { MOVIE_URL } from '../../../../constants/urls'
 
 const CommentMovieCard: React.FC = () => {
 
@@ -10,7 +11,7 @@ const CommentMovieCard: React.FC = () => {
         <div className="aside-poster-block movie-extras__aside-poster-block">
             <a
                 className="nbl-link aside-poster-block movie-extras__aside-poster-block__nbl-link"
-                href={'#'}
+                href={`${MOVIE_URL}${data.id}`}
             >
                 <div className="nbl-poster nbl-poster_type_poster nbl-poster_extrasMode_rusk aside-poster-block__nbl-poster">
                     <div className="nbl-poster__imageWrapper">

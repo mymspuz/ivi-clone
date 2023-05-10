@@ -87,6 +87,7 @@ export interface IMovieCreatorResponse {
     profession: string
     description: string | null
     enProfession: string
+    films?: IMovieResponse[]
 }
 
 export interface IMovieResponseMainPage {

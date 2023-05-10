@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
 import { IMovieReview } from '../../../../models/Movie'
 import MovieReviewItem from './MovieReviewItem'
 import { dataReviews } from '../../../../data/dataMovie'
+import { MovieContext } from '../../index'
 
 
 type TProps = {
@@ -12,6 +13,7 @@ type TProps = {
 const MovieReviews: React.FC<TProps> = ({ handlerViewComments }) => {
 
     const reviews: IMovieReview[] = dataReviews
+    const data = useContext(MovieContext)
 
     return (
         <section className="pageSection contentCard__pageSection">
@@ -31,10 +33,10 @@ const MovieReviews: React.FC<TProps> = ({ handlerViewComments }) => {
                                                 Отзывы
                                             </a>
                                             <div className="nbl-superscript nbl-superscript_style_default nbl-superscript_size_sheicu extraLinks__nbl-superscript">
-                                                <div className="nbl-superscript__text">5</div>
+                                                <div className="nbl-superscript__text">{reviews.length}</div>
                                             </div>
                                         </li>
-                                        <div className="extraLinks__subtitle">о сериале «Дублинские убийства»</div>
+                                        <div className="extraLinks__subtitle">о {data.movieType} {data.name}</div>
                                     </ul>
                                 </div>
                                 <button
@@ -53,7 +55,7 @@ const MovieReviews: React.FC<TProps> = ({ handlerViewComments }) => {
                                             <div className="ivi-carousel-viewport">
                                                 <div className="ivi-carousel-container">
                                                     {reviews && reviews.map(review =>
-                                                        <MovieReviewItem key={review.id} review={review} />
+                                                        <MovieReviewItem key={review.id} review={review} handlerViewComments={handlerViewComments} />
                                                     )}
                                                 </div>
                                             </div>

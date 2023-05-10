@@ -14,7 +14,7 @@ const MovieCreatorCarousel: React.FC<TProps> = ({ handlerViewCreators }) => {
 
     return (
         <GalleryCarousel type={'big'} size={{ width: 88, padding: 24 }} viewMobile={true}>
-            {data.creators && data.creators.map(creator => <MovieCreatorCard key={creator.creator.id} data={creator} />)}
+            {data.creators && data.creators.slice(0, 13).map(creator => <MovieCreatorCard key={creator.creator.id} data={creator} />)}
             <div className="ivi-carousel-item" style={{ width: `${88}px`, paddingRight: `${24}px` }}>
                 <a
                     className="nbl-moreTile nbl-moreTile_type_person nbl-moreTile_variant_natrus gallery__nbl-moreTile gallery__nbl-moreTile_fixedSlimPosterBlock"

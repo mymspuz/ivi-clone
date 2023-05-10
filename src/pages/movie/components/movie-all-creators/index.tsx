@@ -49,7 +49,6 @@ const MovieAllCreators: React.FC<TProps> = ({ handlerViewCreators }) => {
                                                 <li className="ivi-tabs__item ivi-tabs__item_active">
                                                     <a
                                                         className="ivi-tabs__link ivi-tabs__link_active"
-                                                        href="/watch/504637/person"
                                                     >
                                                         Создатели
                                                     </a>

@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { IMovieCreator } from '../../../../models/Movie'
+import {PERSON_URL} from "../../../../constants/urls";
 
 type TProps = {
     data: { creator: IMovieCreator, role: string }
@@ -21,7 +22,7 @@ const MovieCreatorCard: React.FC<TProps> = ({ data, size }) => {
         >
             <a
                 className="fixedSlimPosterBlock fixedSlimPosterBlock_type_person gallery__fixedSlimPosterBlock"
-                href={'#'}
+                href={`${PERSON_URL}${data.creator.id}`}
             >
                 <div className="fixedSlimPosterBlock__imageSection">
                 {data.creator.poster

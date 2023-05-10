@@ -1,4 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
+
+import CommentAddForm from './CommentAddForm'
 
 type TProps = {
     data: {
@@ -11,6 +13,7 @@ type TProps = {
 const CommentItem: React.FC<TProps> = ({ data }) => {
 
     const viewDate = data.date
+    const [ viewComment, setViewComment ] = useState<boolean>(false)
 
     return (
         <li className="movie-extras__item">
@@ -37,10 +40,18 @@ const CommentItem: React.FC<TProps> = ({ data }) => {
                 </div>
             </header>
             <div className="clause">
-                <div className="clause__text is-truncated">
+                <div className="clause__text is-truncated" style={{ marginBottom: '15px' }}>
                     <p>{data.text}</p>
                     <span className="clause__toggle">Развернуть</span>
+                    <span
+                        className="clause__toggle"
+                        style={{ paddingLeft: '15px' }}
+                        onClick={() => setViewComment(prevState => !prevState)}
+                    >
+                        Ответить
+                    </span>
                 </div>
+                {viewComment && <CommentAddForm handlerAdd={() => {}} />}
             </div>
         </li>
     )

@@ -1,6 +1,9 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import { IMovie } from '../../../../models/Movie'
+import { MOVIE_URL } from '../../../../constants/urls'
+import { ButtonLink } from '../../../../components'
 
 type TProps = {
     item: IMovie
@@ -9,12 +12,13 @@ type TProps = {
 const PersonFilmographyItem: React.FC<TProps> = ({ item }) => {
     return (
         <div data-contentid={item.id} className="personFilmographyItem personFilmography__personFilmographyItem">
-            <a href="/watch/494515" className="personFilmographyItem__body">
+            <a href={`${MOVIE_URL}${item.id}`} className="personFilmographyItem__body">
                 <div className="personFilmographyItem__figure">
                     <div className="nbl-poster nbl-poster_type_poster">
                         <div className="nbl-poster__imageWrapper">
                             <img
-                                className="nbl-poster__image" data-stub="false"
+                                className="nbl-poster__image"
+                                data-stub="false"
                                 src={item.poster}
                             />
                         </div>
@@ -40,9 +44,7 @@ const PersonFilmographyItem: React.FC<TProps> = ({ item }) => {
                         </div>
                     </div>
                     <div className="personFilmographyItem__action">
-                        <div className="nbl-button nbl-button_textAlign_center nbl-button_style_iekichi nbl-button_size_shinnok nbl-button_hasBadge_0">
-                            <div className="nbl-button__primaryText">Подробнее</div>
-                        </div>
+                        <ButtonLink title={'Подробнее'} handlerClick={() => <Link to={`${MOVIE_URL}${item.id}`} />} />
                     </div>
                 </div>
             </a>
