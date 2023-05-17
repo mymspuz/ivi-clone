@@ -1,3 +1,10 @@
-export { default as Card } from "./Card";
-export { default as CategoryMovies } from "./CategoryMovies";
-export { default as Persons } from "./Person";
+export { default as MoviesBreadCrumbsHeader } from './MoviesBreadCrumbsHeader'
+export { default as MoviesTextInfoHeader } from './MoviesTextInfoHeader'
+export { default as MoviesSuggestion } from './MoviesSuggestion'
+export { default as MoviesFilters } from './MoviesFilters'
+export { default as MoviesFilterGenreItem } from './MoviesFilterGenreItem'
+export { default as MoviesFilterDropDown } from './MoviesFilterDropDown'
+export { default as MoviesFilterCountryItem } from './MoviesFilterCountryItem'
+export { default as MoviesSorting } from './MoviesSorting'
+export { default as MoviesSliderGenres } from './slider-genres/MoviesSliderGenres'
+export { default as MoviesSliderCreators } from './slider-creators'

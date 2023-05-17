@@ -37,7 +37,6 @@ const TvPlusPopularItem: React.FC<TProps> = ({ data, size }) => {
                 </a>
             </div>
         </div>
-
     )
 }
 

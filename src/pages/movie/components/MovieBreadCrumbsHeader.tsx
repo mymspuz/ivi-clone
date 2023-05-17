@@ -14,9 +14,7 @@ const MovieBreadCrumbsHeader: React.FC = () => {
                     <div className="headerBar__container-inner">
                         <div className="headerBar__controls">
                             <div className="headerBar__nav">
-                                <ul className="breadCrumbs breadCrumbs_modern headerBar__breadCrumbs"
-                                    data-test="bread_crumbs_block"
-                                >
+                                <ul className="breadCrumbs breadCrumbs_modern headerBar__breadCrumbs">
                                     {genres.map(breadcrumb => (
                                         <li
                                             key={breadcrumb.id}

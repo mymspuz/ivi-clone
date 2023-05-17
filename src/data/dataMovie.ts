@@ -1003,3 +1003,32 @@ export const mainSliders: IMainBanner[] = [
         link: '#'
     },
 ]
+
+export const listGenres: { id: number, icon: string, name: string }[] = [
+    { id: 1, icon: 'nbl-icon_genre_drama_32', name: 'Драмы' },
+    { id: 2, icon: 'nbl-icon_genre_comedy_32', name: 'Комедии' },
+    { id: 3, icon: 'nbl-icon_genre_action_32', name: 'Боевики' },
+    { id: 4, icon: 'nbl-icon_genre_triller_32', name: 'Триллеры' },
+    { id: 5, icon: 'nbl-icon_genre_adventure_32', name: 'Приключения' },
+    { id: 6, icon: 'nbl-icon_genre_foreign_32', name: 'Зарубежные' },
+    { id: 7, icon: 'nbl-icon_genre_melodrama_32', name: 'Мелодрамы' },
+    { id: 8, icon: 'nbl-icon_genre_fantastic_32', name: 'Фантастика' },
+    { id: 9, icon: 'nbl-icon_genre_fantasy_32', name: 'Фэнтези' },
+    { id: 10, icon: 'nbl-icon_genre_family_32', name: 'Семейные' },
+    { id: 11, icon: 'nbl-icon_genre_detective_32', name: 'Детективы' },
+    { id: 12, icon: 'nbl-icon_genre_horror_32', name: 'Ужасы' },
+    { id: 13, icon: 'nbl-icon_genre_soviet_32', name: 'Советские' },
+    { id: 14, icon: 'nbl-icon_genre_military_32', name: 'Военные' },
+    { id: 15, icon: 'nbl-icon_genre_russian_32', name: 'Русские' },
+    { id: 16, icon: 'nbl-icon_genre_historical_32', name: 'Исторические' },
+    { id: 17, icon: 'nbl-icon_genre_kids_32', name: 'Для детей' },
+    { id: 18, icon: 'nbl-icon_genre_comics_32', name: 'По комиксам' },
+    { id: 19, icon: 'nbl-icon_genre_disaster_32', name: 'Катастрофы' },
+    { id: 20, icon: 'nbl-icon_genre_arthouse_32', name: 'Артхаус' },
+    { id: 21, icon: 'nbl-icon_genre_mystic_32', name: 'Мистические' },
+    { id: 22, icon: 'nbl-icon_genre_criminal_32', name: 'Криминал' },
+    { id: 23, icon: 'nbl-icon_genre_sport_32', name: 'Спорт' },
+    { id: 24, icon: 'nbl-icon_genre_biography_32', name: 'Биография' },
+    { id: 25, icon: 'nbl-icon_genre_western_32', name: 'Вестерн' },
+    { id: 26, icon: 'nbl-icon_genre_music_32', name: 'Музыкальные' }
+]
