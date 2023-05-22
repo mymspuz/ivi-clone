@@ -1,4 +1,7 @@
-import React, { useState } from 'react'
+import React from 'react'
+
+import { useAppDispatch, useAppSelector } from '../../../store/hooks'
+import { setFilters } from '../../../store/slice/moviesSlice'
 
 type TProps = {
     name: string
@@ -6,7 +9,8 @@ type TProps = {
 
 const MoviesFilterDropDownItemRadio: React.FC<TProps> = ({ name }) => {
 
-    const [ active, setActive ] = useState<boolean>(false)
+    const dispatch = useAppDispatch()
+    const filterData = useAppSelector(state => state.movies.filters.years)
 
     return (
         <li className="filterDropdown__item filterDropdown__item_radio">
@@ -16,8 +20,8 @@ const MoviesFilterDropDownItemRadio: React.FC<TProps> = ({ name }) => {
                     type="radio"
                     name="years"
                     value={name}
-                    checked={active}
-                    onClick={() => setActive(!active)}
+                    checked={filterData === name}
+                    onChange={() => dispatch(setFilters({ type: 'years', value: name }))}
                 />
                 <div className="filterDropdown__input-text">{name}</div>
                 <div className="filterDropdown__radio"></div>

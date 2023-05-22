@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit'
 
-import { authReducer } from './slice'
+import { authReducer, moviesReducer } from './slice'
 
 import { authApi } from './queries/auth.queri'
 import { moviesApi } from './queries/movies.queri'
@@ -11,6 +11,7 @@ import { rtkQueryErrorLogger } from './middleware/errorLogger'
 export const store = configureStore({
     reducer: {
         auth: authReducer,
+        movies: moviesReducer,
         [authApi.reducerPath]: authApi.reducer,
         [moviesApi.reducerPath]: moviesApi.reducer,
         [personsApi.reducerPath]: personsApi.reducer,

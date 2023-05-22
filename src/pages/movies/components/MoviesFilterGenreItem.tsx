@@ -1,11 +1,18 @@
 import React from 'react'
 
+import { useAppDispatch, useAppSelector } from '../../../store/hooks'
+import { setFilters } from '../../../store/slice/moviesSlice'
+
 type TProps = {
     icon: string
     name: string
 }
 
 const MoviesFilterGenreItem: React.FC<TProps> = ({ icon, name }) => {
+
+    const selectedGenres = useAppSelector(state => state.movies.filters.genres)
+    const dispatch = useAppDispatch()
+
     return (
         <div
             aria-hidden="false"
@@ -16,9 +23,10 @@ const MoviesFilterGenreItem: React.FC<TProps> = ({ icon, name }) => {
         >
             <div>
                 <div
-                    className="filterDropdown__carousel-item"
+                    className={`filterDropdown__carousel-item ${selectedGenres.includes(name) ? 'checked' : ''}`}
                     style={{ width: '100%', display: 'inline-block' }}
                     tabIndex={-1}
+                    onClick={() => dispatch(setFilters({ type: 'genres', value: name }))}
                 >
                     <div className="filterDropdown__nbl-tile nbl-tile nbl-tile_type_tornor nbl-tile_style_aratus nbl-tile_hasAvatar_0 nbl-tile_hasIcon_1">
                         <div

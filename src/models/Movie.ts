@@ -101,3 +101,16 @@ export interface IMovieMainPage {
     cartoons: IMovie[]
     foreign: IMovie[]
 }
+
+export interface IMoviesPage {
+    tops: IMovie[]
+    news: IMovie[]
+    genres: { id: number, name: string }[]
+    countries: { id: number, name: string }[]
+    creators: {
+        id: number,
+        creator: IMovieCreator,
+        role: string
+    } []
+
+}

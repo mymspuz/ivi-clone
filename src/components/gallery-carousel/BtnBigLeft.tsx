@@ -10,7 +10,7 @@ const BtnBigLeft: React.FC<TProps> = ({ action }) => {
         <span className={`xArrowButton xArrowButton_nbl-posterUprightBlock xArrowButton_direction_left gallery__xArrowButton`}>
             <div className="xArrowButton__iconWrapper">
                 <div
-                    className="nbl-icon nbl-icon_arrowLeft_8x20 xArrowButton__arrowIcon"
+                    className="xArrowButton__icon"
                     onClick={() => action(-1)}
                 ></div>
             </div>
