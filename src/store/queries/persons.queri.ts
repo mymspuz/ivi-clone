@@ -1,13 +1,13 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
-import { RootState } from '../index'
-import { IMovie, IMovieCreator, IMovieCreatorResponse } from '../../models/Movie'
-import { transformPersonDetail } from '../../utils/transfromResponse'
+import { RootState } from '@/store'
+import { IMovie, IMovieCreator, IMovieCreatorResponse } from '@/models/Movie'
+import { transformPersonDetail } from '@/utils/transfromResponse'
 
 export const personsApi = createApi({
     reducerPath: 'personsApi',
     baseQuery: fetchBaseQuery({
-        baseUrl: `${process.env.REACT_APP_HOST_SERVER}/person/`,
+        baseUrl: `http://localhost:5000/person/`,
         prepareHeaders: (headers, { getState }) => {
             const token = (getState() as RootState).auth.token
             if (token) {

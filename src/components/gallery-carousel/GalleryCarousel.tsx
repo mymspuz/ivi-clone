@@ -18,7 +18,7 @@ type TProps = {
 const GalleryCarousel: React.FC<PropsWithChildren<TProps>> = ({ children, size, type, viewMobile }) => {
 
     const sizeItem = size.width + size.padding
-    const [countItem, setCountItem] = useState<number>(Math.floor(window.innerWidth / sizeItem))
+    const [countItem, setCountItem] = useState<number>(Math.floor((typeof window !== "undefined") ? window.innerWidth / sizeItem : 0))
     const [activeIndex, setActiveIndex] = useState<number>(0)
 
     const carouselRef = useRef<HTMLDivElement>(null)

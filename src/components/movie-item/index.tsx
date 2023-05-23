@@ -1,7 +1,7 @@
 import React from 'react'
 
-import { MOVIE_URL } from '../../constants/urls'
-import { IMovie } from '../../models/Movie'
+import { MOVIE_URL } from '@/constants/urls'
+import { IMovie } from '@/models/Movie'
 
 type TProps = {
     data: IMovie,

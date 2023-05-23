@@ -1,7 +1,7 @@
 import {BaseQueryApi, createApi, FetchArgs, FetchBaseQueryError} from '@reduxjs/toolkit/query/react'
 import { fetchBaseQuery } from '@reduxjs/toolkit/dist/query/react'
 
-import { RootState } from '../index'
+import { RootState } from '@/store'
 import {
     IMovie,
     IMovieDetailResponse,
@@ -9,8 +9,8 @@ import {
     IMovieResponse,
     IMovieResponseMainPage,
     IMoviesPage
-} from '../../models/Movie'
-import { transformMovieDetail, transformMovies } from '../../utils/transfromResponse'
+} from '@/models/Movie'
+import { transformMovieDetail, transformMovies } from '@/utils/transfromResponse'
 import {useAppSelector} from "../hooks";
 
 type TIdName = {
@@ -26,7 +26,7 @@ type TParams = {
 export const moviesApi = createApi({
     reducerPath: 'moviesApi',
     baseQuery: fetchBaseQuery({
-        baseUrl: `${process.env.REACT_APP_HOST_SERVER}/movies/`,
+        baseUrl: `http://localhost:5000/movies/`,
         prepareHeaders: (headers, { getState }) => {
             const token = (getState() as RootState).auth.token
             if (token) {
