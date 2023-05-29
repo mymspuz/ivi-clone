@@ -1,9 +1,9 @@
-import { IMainBanner, IMovie, IMovieCreator, IMovieReview } from '../models/Movie'
+import {IMainBanner, IMovie, IMovieCreator, IMovieReview, TSorting} from '../models/Movie'
 import {IFilterType} from "../models/Movies";
 
 export const dataReviews: IMovieReview[] = [
-    { id: 1, parentId: 0, author: 'Елена', content: 'Очень хороший сериал, необычная развязка, в духе скандинавких детективов - мрачно, загадочно, необычно. Понравилось, что в конце фильма все стало понятно :).', date: new Date('14.09.2021'), vote: 6 },
-    { id: 2, parentId: 0, author: 'EE', content: 'угрюмоватый, не тянет на 9,4 совсем, 6 поставила', date: new Date('14.09.2021'), vote: 6 },
+    { id: 1, parentId: 0, author: 'Елена', content: 'Очень хороший сериал, необычная развязка, в духе скандинавких детективов - мрачно, загадочно, необычно. Понравилось, что в конце фильма все стало понятно :).', date: new Date('14.09.2021 00:00:000'), vote: 6 },
+    { id: 2, parentId: 0, author: 'EE', content: 'угрюмоватый, не тянет на 9,4 совсем, 6 поставила', date: new Date('14.09.2021 00:00:000'), vote: 6 },
 ]
 
 export const dataCreators: IMovieCreator[] = [
@@ -98,6 +98,7 @@ export const dataMoviesTop: { movie: IMovie, logo: string }[] = [
         movie: {
             id: 1,
             name: 'И снова здравствуйте!',
+            engName: '',
             movieType: 'Мультфильмы',
             genres: [{ id: 1, name: 'Развивающие' }],
             yearRelease: { start: 2010, finish: 2020 },
@@ -106,7 +107,7 @@ export const dataMoviesTop: { movie: IMovie, logo: string }[] = [
             quality: [],
             voice: [{ id: 1, voiceType: 'voice', language: 'Рус' }],
             rating: { valueInt: 8, valueFract: 4 },
-            voites: 0,
+            votes: 0,
             detailRating: [
                 { name: 'сюжет', value: 59 },
                 { name: 'актёры', value: 65 },
@@ -128,7 +129,8 @@ export const dataMoviesTop: { movie: IMovie, logo: string }[] = [
                 { id: 6, creator: dataCreators[5], role: 'Актёр' },
                 { id: 7, creator: dataCreators[6], role: 'Актёр дубляжа' },
             ],
-            reviews: dataReviews
+            reviews: [],
+            lookWith: []
         },
         logo: 'https://thumbs.dfs.ivi.ru/storage9/contents/7/a/f1fdf81472f76cc5950e0f4ef30060.png/x200/?q=85'
     },
@@ -136,6 +138,7 @@ export const dataMoviesTop: { movie: IMovie, logo: string }[] = [
         movie: {
             id: 2,
             name: 'Шпион',
+            engName: '',
             movieType: 'Мультфильмы',
             genres: [{ id: 1, name: 'Развивающие' }],
             yearRelease: { start: 2010, finish: 2020 },
@@ -144,7 +147,7 @@ export const dataMoviesTop: { movie: IMovie, logo: string }[] = [
             quality: [],
             voice: [{ id: 1, voiceType: 'voice', language: 'Рус' }],
             rating: { valueInt: 8, valueFract: 4 },
-            voites: 0,
+            votes: 0,
             detailRating: [
                 { name: 'сюжет', value: 59 },
                 { name: 'актёры', value: 65 },
@@ -166,7 +169,8 @@ export const dataMoviesTop: { movie: IMovie, logo: string }[] = [
                 { id: 6, creator: dataCreators[5], role: 'Актёр' },
                 { id: 7, creator: dataCreators[6], role: 'Актёр дубляжа' },
             ],
-            reviews: dataReviews
+            reviews: [],
+            lookWith: []
         },
         logo: 'https://thumbs.dfs.ivi.ru/storage9/contents/b/6/356258bbe7c5ba5b5b40251be3d48f.png/x200/?q=85'
     },
@@ -174,6 +178,7 @@ export const dataMoviesTop: { movie: IMovie, logo: string }[] = [
         movie: {
             id: 3,
             name: 'Праведник',
+            engName: '',
             movieType: 'Мультфильмы',
             genres: [{ id: 1, name: 'Развивающие' }],
             yearRelease: { start: 2010, finish: 2020 },
@@ -182,7 +187,7 @@ export const dataMoviesTop: { movie: IMovie, logo: string }[] = [
             quality: [],
             voice: [{ id: 1, voiceType: 'voice', language: 'Рус' }],
             rating: { valueInt: 8, valueFract: 4 },
-            voites: 0,
+            votes: 0,
             detailRating: [
                 { name: 'сюжет', value: 59 },
                 { name: 'актёры', value: 65 },
@@ -204,7 +209,8 @@ export const dataMoviesTop: { movie: IMovie, logo: string }[] = [
                 { id: 6, creator: dataCreators[5], role: 'Актёр' },
                 { id: 7, creator: dataCreators[6], role: 'Актёр дубляжа' },
             ],
-            reviews: dataReviews
+            reviews: [],
+            lookWith: []
         },
         logo: 'https://thumbs.dfs.ivi.ru/storage28/contents/e/e/2b49a5aa4d8ab07304588192853bee.png/x200/?q=85'
     },
@@ -212,6 +218,7 @@ export const dataMoviesTop: { movie: IMovie, logo: string }[] = [
         movie: {
             id: 4,
             name: 'Здоровый человек',
+            engName: '',
             movieType: 'Мультфильмы',
             genres: [{ id: 1, name: 'Развивающие' }],
             yearRelease: { start: 2010, finish: 2020 },
@@ -220,7 +227,7 @@ export const dataMoviesTop: { movie: IMovie, logo: string }[] = [
             quality: [],
             voice: [{ id: 1, voiceType: 'voice', language: 'Рус' }],
             rating: { valueInt: 8, valueFract: 4 },
-            voites: 0,
+            votes: 0,
             detailRating: [
                 { name: 'сюжет', value: 59 },
                 { name: 'актёры', value: 65 },
@@ -242,7 +249,8 @@ export const dataMoviesTop: { movie: IMovie, logo: string }[] = [
                 { id: 6, creator: dataCreators[5], role: 'Актёр' },
                 { id: 7, creator: dataCreators[6], role: 'Актёр дубляжа' },
             ],
-            reviews: dataReviews
+            reviews: [],
+            lookWith: []
         },
         logo: 'https://thumbs.dfs.ivi.ru/storage30/contents/a/a/c55629c1cb82b0ac7c0d9aca539d89.png/x200/?q=85'
     },
@@ -250,6 +258,7 @@ export const dataMoviesTop: { movie: IMovie, logo: string }[] = [
         movie: {
             id: 5,
             name: 'Семья',
+            engName: '',
             movieType: 'Мультфильмы',
             genres: [{ id: 1, name: 'Развивающие' }],
             yearRelease: { start: 2010, finish: 2020 },
@@ -258,7 +267,7 @@ export const dataMoviesTop: { movie: IMovie, logo: string }[] = [
             quality: [],
             voice: [{ id: 1, voiceType: 'voice', language: 'Рус' }],
             rating: { valueInt: 8, valueFract: 4 },
-            voites: 0,
+            votes: 0,
             detailRating: [
                 { name: 'сюжет', value: 59 },
                 { name: 'актёры', value: 65 },
@@ -280,7 +289,8 @@ export const dataMoviesTop: { movie: IMovie, logo: string }[] = [
                 { id: 6, creator: dataCreators[5], role: 'Актёр' },
                 { id: 7, creator: dataCreators[6], role: 'Актёр дубляжа' },
             ],
-            reviews: dataReviews
+            reviews: [],
+            lookWith: []
         },
         logo: 'https://thumbs.dfs.ivi.ru/storage9/contents/d/e/14ad136916cb3797041ef18a0b6149.png/x200/?q=85'
     },
@@ -288,6 +298,7 @@ export const dataMoviesTop: { movie: IMovie, logo: string }[] = [
         movie: {
             id: 6,
             name: 'Против всех',
+            engName: '',
             movieType: 'Мультфильмы',
             genres: [{ id: 1, name: 'Развивающие' }],
             yearRelease: { start: 2010, finish: 2020 },
@@ -296,7 +307,7 @@ export const dataMoviesTop: { movie: IMovie, logo: string }[] = [
             quality: [],
             voice: [{ id: 1, voiceType: 'voice', language: 'Рус' }],
             rating: { valueInt: 8, valueFract: 4 },
-            voites: 0,
+            votes: 0,
             detailRating: [
                 { name: 'сюжет', value: 59 },
                 { name: 'актёры', value: 65 },
@@ -318,7 +329,8 @@ export const dataMoviesTop: { movie: IMovie, logo: string }[] = [
                 { id: 6, creator: dataCreators[5], role: 'Актёр' },
                 { id: 7, creator: dataCreators[6], role: 'Актёр дубляжа' },
             ],
-            reviews: dataReviews
+            reviews: [],
+            lookWith: []
         },
         logo: 'https://thumbs.dfs.ivi.ru/storage2/contents/5/0/5a82ac6f5942eeea490540feca0a62.png/x200/?q=85'
     },
@@ -326,6 +338,7 @@ export const dataMoviesTop: { movie: IMovie, logo: string }[] = [
         movie: {
             id: 7,
             name: 'Непослушная',
+            engName: '',
             movieType: 'Мультфильмы',
             genres: [{ id: 1, name: 'Развивающие' }],
             yearRelease: { start: 2010, finish: 2020 },
@@ -334,7 +347,7 @@ export const dataMoviesTop: { movie: IMovie, logo: string }[] = [
             quality: [],
             voice: [{ id: 1, voiceType: 'voice', language: 'Рус' }],
             rating: { valueInt: 8, valueFract: 4 },
-            voites: 0,
+            votes: 0,
             detailRating: [
                 { name: 'сюжет', value: 59 },
                 { name: 'актёры', value: 65 },
@@ -356,7 +369,8 @@ export const dataMoviesTop: { movie: IMovie, logo: string }[] = [
                 { id: 6, creator: dataCreators[5], role: 'Актёр' },
                 { id: 7, creator: dataCreators[6], role: 'Актёр дубляжа' },
             ],
-            reviews: dataReviews
+            reviews: [],
+            lookWith: []
         },
         logo: 'https://thumbs.dfs.ivi.ru/storage28/contents/f/4/9d0d6b3e5fd0cd0a35080f6950d1c6.png/x200/?q=85'
     },
@@ -364,6 +378,7 @@ export const dataMoviesTop: { movie: IMovie, logo: string }[] = [
         movie: {
             id: 8,
             name: 'Операция «Фортуна»: Искусство побеждать',
+            engName: '',
             movieType: 'Мультфильмы',
             genres: [{ id: 1, name: 'Развивающие' }],
             yearRelease: { start: 2010, finish: 2020 },
@@ -372,7 +387,7 @@ export const dataMoviesTop: { movie: IMovie, logo: string }[] = [
             quality: [],
             voice: [{ id: 1, voiceType: 'voice', language: 'Рус' }],
             rating: { valueInt: 8, valueFract: 4 },
-            voites: 0,
+            votes: 0,
             detailRating: [
                 { name: 'сюжет', value: 59 },
                 { name: 'актёры', value: 65 },
@@ -394,7 +409,8 @@ export const dataMoviesTop: { movie: IMovie, logo: string }[] = [
                 { id: 6, creator: dataCreators[5], role: 'Актёр' },
                 { id: 7, creator: dataCreators[6], role: 'Актёр дубляжа' },
             ],
-            reviews: dataReviews
+            reviews: [],
+            lookWith: []
         },
         logo: 'https://thumbs.dfs.ivi.ru/storage9/contents/0/7/c29756fa4d94a6ba334836e7820b3a.png/x200/?q=85'
     },
@@ -402,6 +418,7 @@ export const dataMoviesTop: { movie: IMovie, logo: string }[] = [
         movie: {
             id: 9,
             name: 'Марлоу',
+            engName: '',
             movieType: 'Мультфильмы',
             genres: [{ id: 1, name: 'Развивающие' }],
             yearRelease: { start: 2010, finish: 2020 },
@@ -410,7 +427,7 @@ export const dataMoviesTop: { movie: IMovie, logo: string }[] = [
             quality: [],
             voice: [{ id: 1, voiceType: 'voice', language: 'Рус' }],
             rating: { valueInt: 8, valueFract: 4 },
-            voites: 0,
+            votes: 0,
             detailRating: [
                 { name: 'сюжет', value: 59 },
                 { name: 'актёры', value: 65 },
@@ -432,7 +449,8 @@ export const dataMoviesTop: { movie: IMovie, logo: string }[] = [
                 { id: 6, creator: dataCreators[5], role: 'Актёр' },
                 { id: 7, creator: dataCreators[6], role: 'Актёр дубляжа' },
             ],
-            reviews: dataReviews
+            reviews: [],
+            lookWith: []
         },
         logo: 'https://thumbs.dfs.ivi.ru/storage4/contents/e/1/701622d611211cc2e765049cd61492.png/x200/?q=85'
     },
@@ -440,6 +458,7 @@ export const dataMoviesTop: { movie: IMovie, logo: string }[] = [
         movie: {
             id: 10,
             name: 'Чекаго',
+            engName: '',
             movieType: 'Мультфильмы',
             genres: [{ id: 1, name: 'Развивающие' }],
             yearRelease: { start: 2010, finish: 2020 },
@@ -448,7 +467,7 @@ export const dataMoviesTop: { movie: IMovie, logo: string }[] = [
             quality: [],
             voice: [{ id: 1, voiceType: 'voice', language: 'Рус' }],
             rating: { valueInt: 8, valueFract: 4 },
-            voites: 0,
+            votes: 0,
             detailRating: [
                 { name: 'сюжет', value: 59 },
                 { name: 'актёры', value: 65 },
@@ -470,7 +489,8 @@ export const dataMoviesTop: { movie: IMovie, logo: string }[] = [
                 { id: 6, creator: dataCreators[5], role: 'Актёр' },
                 { id: 7, creator: dataCreators[6], role: 'Актёр дубляжа' },
             ],
-            reviews: dataReviews
+            reviews: [],
+            lookWith: []
         },
         logo: 'https://thumbs.dfs.ivi.ru/storage4/contents/0/1/87189c6689c7ebbdcf6355b1cd3381.png/x200/?q=85'
     },
@@ -555,4 +575,11 @@ export const suggestions: { id: number, name: string, type: IFilterType, value: 
     { id: 11, name: 'Фантастические', type: 'genres', value: 'фантастика' },
     { id: 12, name: 'Мелодрамы', type: 'genres', value: 'мелодрама' },
     { id: 13, name: 'Триллеры', type: 'genres', value: 'триллер' },
+]
+
+export const dataSorting: { id: number, name: string, type: TSorting }[] = [
+    { id: 1, name: 'По количеству оценок', type: 'vote' },
+    { id: 2, name: 'По рейтингу', type: 'rating' },
+    { id: 3, name: 'По дате выхода', type: 'date' },
+    { id: 4, name: 'По алфавиту', type: 'name' },
 ]

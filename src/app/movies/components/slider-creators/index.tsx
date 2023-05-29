@@ -1,18 +1,28 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 
 import { GalleryCarousel } from '../../../../components'
 import MoviesSliderCreatorsItem from './MoviesSliderCreatorsItem'
-import { IMovieCreator } from '../../../../models/Movie'
+import { usePersonsForSliderQuery } from '@/store/queries/persons.queri'
 
-type TProps = {
-    data: {
-        id: number
-        creator: IMovieCreator
-        role: string
-    }[]
-}
+const MoviesSliderCreators: React.FC = () => {
 
-const MoviesSliderCreators: React.FC<TProps> = ({ data }) => {
+    const {
+        data,
+        isLoading,
+        isError,
+        error, isSuccess
+    } = usePersonsForSliderQuery()
+
+    useEffect(() => {
+        if (isError) {
+            if (Array.isArray((error as any).data.error)) {
+                (error as any).data.error.forEach((el: any) => console.log(el.message))
+            } else {
+                console.log((error as any).data.message)
+            }
+        }
+    }, [isLoading])
+
     return (
         <section className="pageSection catalog__pageSection">
             <div className="pageSection__container">
@@ -21,11 +31,13 @@ const MoviesSliderCreators: React.FC<TProps> = ({ data }) => {
                         <div className="gallery__header">
                             <span className="gallery__headerLink">Персоны</span>
                         </div>
-                        <GalleryCarousel size={{ width: 153, padding: 24 }} type={'big'}>
-                            {data.map(creator =>
-                                <MoviesSliderCreatorsItem key={creator.id} data={creator.creator} />)
-                            }
-                        </GalleryCarousel>
+                        {(!isLoading && data) &&
+                            <GalleryCarousel size={{ width: 153, padding: 24 }} type={'big'}>
+                                {data.map(creator =>
+                                    <MoviesSliderCreatorsItem key={creator.id} data={creator} />)
+                                }
+                            </GalleryCarousel>
+                        }
                     </div>
                 </div>
             </div>

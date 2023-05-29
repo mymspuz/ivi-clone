@@ -1,5 +1,7 @@
 'use client'
-import React, { useEffect, useState } from 'react'
+
+import React, { useEffect } from 'react'
+import { useSearchParams } from 'next/navigation'
 
 import '../../assets/css/page-catalog.css'
 import { addClass } from '@/utils/bodyClass'
@@ -10,21 +12,25 @@ import {
     MoviesSorting,
     MoviesSliderGenres,
     MoviesSliderCreators,
-    MoviesSliderSuggestions, MoviesGallery
+    MoviesSliderSuggestions,
+    MoviesGallery
 } from './components'
 import { useMoviesQuery } from '@/store/queries/movies.queri'
 import MoviesCompilation from './components/MoviesCompilation'
 import { useAppDispatch, useAppSelector } from '@/store/hooks'
-import { setCountries, setGenres } from '@/store/slice/moviesSlice'
+import { setCountries, setFiltersFromUrl, setGenres } from '@/store/slice/moviesSlice'
+import { getParamsFromUrl } from '@/utils/urlParams'
 
 const MoviesPage = () => {
 
     addClass('body', 'catalog')
     addClass('body', 'contentCard')
-    addClass('root', 'basePage__inner')
+    // addClass('root', 'basePage__inner')
 
     const moviesFilterData = useAppSelector(state => state.movies)
     const dispatch = useAppDispatch()
+
+    const searchParams = useSearchParams()
 
     const {
         data,
@@ -48,10 +54,11 @@ const MoviesPage = () => {
     }, [isLoading])
 
     useEffect(() => {
-        if (moviesFilterData.isFilter) {
-
+        if (searchParams) {
+            const params = getParamsFromUrl(searchParams)
+            dispatch(setFiltersFromUrl(params))
         }
-    }, [moviesFilterData])
+    }, [])
 
     return (
         <>
@@ -65,7 +72,7 @@ const MoviesPage = () => {
                 </div>
             </section>
             {moviesFilterData.isFilter && <MoviesSorting />}
-            {(!isLoading && data) &&
+            {(!isLoading && data && moviesFilterData.countries.length && moviesFilterData.genres.length) &&
                 <>
                     <MoviesFilters />
                     {!moviesFilterData.isFilter
@@ -74,7 +81,7 @@ const MoviesPage = () => {
                                 <MoviesSliderGenres />
                                 <MoviesCompilation title={'Лучшие фильмы'} data={data.tops} />
                                 <MoviesCompilation title={'Выбор ИвИ'} data={data.news} />
-                                <MoviesSliderCreators data={data.creators} />
+                                <MoviesSliderCreators />
                             </>
                         :
                             <MoviesGallery />

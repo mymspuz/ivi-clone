@@ -1,32 +1,14 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
-import { IFilterType } from '../../models/Movies'
-import {IMovie} from "../../models/Movie";
-
-type TIdName = {
-    id: number
-    name: string
-}
+import { IFilterType } from '@/models/Movie'
+import { IMovie, TFilters, TMoviesState, TSorting, TIdName } from '@/models/Movie'
+import { sortingMovies } from '@/utils/sorting'
+import { dataSorting } from '@/data/dataMovie'
+import { getIsFilter, getSearchParams } from '@/utils/urlParams'
 
 type TFilterChange = {
     type: IFilterType
     value: string
-}
-
-type TMoviesState = {
-    genres: TIdName[]
-    countries: TIdName[]
-    years: TIdName[]
-    filters: {
-        genres: string[]
-        years: string
-        countries: string[]
-        ratings: number
-        creators: string
-    }
-    isFilter: boolean
-    page: number
-    movies: IMovie[]
 }
 
 const changeFilterItems = (src: string[], value: string): string[] => {
@@ -49,12 +31,16 @@ const initialState: TMoviesState = {
         genres: [],
         years: 'Все годы',
         countries: [],
-        creators: '',
-        ratings: 0
+        actors: '',
+        directors: '',
+        ratings: 0,
+        votes: 0
     },
     isFilter: false,
     page: 1,
-    movies: []
+    movies: [],
+    searchParams: '',
+    sorting: dataSorting[3]
 }
 
 const moviesSlice = createSlice({
@@ -72,27 +58,41 @@ const moviesSlice = createSlice({
             if (action.payload.type === 'countries') state.filters.countries = changeFilterItems(state.filters.countries, action.payload.value)
             if (action.payload.type === 'years') state.filters.years = action.payload.value
             if (action.payload.type === 'ratings') state.filters.ratings = Number(action.payload.value)
-            if (action.payload.type === 'creators') state.filters.creators = action.payload.value
+            if (action.payload.type === 'votes') state.filters.votes = Number(action.payload.value)
+            if (action.payload.type === 'actors') state.filters.actors = state.filters.actors === action.payload.value ? '' : action.payload.value
+            if (action.payload.type === 'directors') state.filters.directors = state.filters.directors === action.payload.value ? '' : action.payload.value
 
-            state.isFilter =    state.filters.genres.length !== 0 ||
-                                state.filters.years !== 'Все годы' ||
-                                state.filters.countries.length !== 0 ||
-                                state.filters.creators !== '' ||
-                                state.filters.ratings !== 0
+            state.isFilter = getIsFilter(state.filters)
             state.page = 1
             state.movies = []
+            state.searchParams = getSearchParams(state)
         },
         resetFilters: (state) => {
             state.filters = {...initialState.filters}
             state.isFilter = false
             state.page = 1
             state.movies = []
+            state.searchParams = ''
+        },
+        setMovies: (state, action: PayloadAction<IMovie[]>) => {
+            if (action.payload.length && state.movies.some(m => m.id === action.payload[0].id)) return
+            const movies = state.page === 1 ? [...action.payload] : [...state.movies, ...action.payload]
+            state.movies = sortingMovies(state.sorting.type, movies)
         },
         setPage: (state, action: PayloadAction<number>) => {
             state.page = action.payload
+            state.searchParams = getSearchParams(state)
         },
-        setMovies: (state, action: PayloadAction<IMovie[]>) => {
-            state.movies = [...state.movies, ...action.payload]
+        setSortingParams: (state, action: PayloadAction<{ id: number, name: string, type: TSorting }>) => {
+            state.sorting = action.payload
+            state.movies = sortingMovies(action.payload.type, state.movies)
+        },
+        setFiltersFromUrl: (state, action: PayloadAction<{ filters: TFilters, page: number }>) => {
+            state.filters = { ...action.payload.filters }
+            state.isFilter = getIsFilter(state.filters)
+            state.page = action.payload.page
+            state.movies = []
+            state.searchParams = getSearchParams(state)
         }
     }
 })
@@ -102,8 +102,10 @@ export const {
     setCountries,
     setFilters,
     resetFilters,
+    setMovies,
     setPage,
-    setMovies
+    setSortingParams,
+    setFiltersFromUrl
 } = moviesSlice.actions
 
 export default moviesSlice.reducer

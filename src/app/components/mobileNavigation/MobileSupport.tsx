@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import ButtonLink from '../../../components/ButtonLink'
+import ButtonLink from '../../../components/btn-link/ButtonLink'
 
 const MobileSupport = () => {
 

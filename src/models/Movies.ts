@@ -19,6 +19,3 @@
 //   countMovies: number;
 //   poster: string;
 // }
-
-
-export type IFilterType = 'genres' | 'years' | 'countries' | 'creators' | 'ratings'

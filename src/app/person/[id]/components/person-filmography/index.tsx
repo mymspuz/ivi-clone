@@ -38,7 +38,7 @@ const PersonFilmography: React.FC = () => {
                     </div>
                 </div>
                 <div className="personFilmography__list">
-                    {movies && movies.map(movie => <PersonFilmographyItem key={movie.id} item={movie} /> )}
+                    {movies && movies.map(movie => <PersonFilmographyItem key={movie.id} item={movie} type={'person'} /> )}
                 </div>
                 {/*<div className="personFilmography__more">*/}
                 {/*    <button className="personFilmography__moreLink">Ещё 35 фильмов</button>*/}

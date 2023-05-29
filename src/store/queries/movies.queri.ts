@@ -10,7 +10,7 @@ import {
     IMovieResponseMainPage,
     IMoviesPage
 } from '@/models/Movie'
-import { transformMovieDetail, transformMovies } from '@/utils/transfromResponse'
+import {transformMovieDetail, transformMovies, transformMovieToMovieResponse} from '@/utils/transfromResponse'
 import {useAppSelector} from "../hooks";
 
 type TIdName = {
@@ -76,23 +76,18 @@ export const moviesApi = createApi({
                 if (movies.countries.length) {
                     result.countries = [...movies.countries]
                 } else {
-                    const countries = await fetchWithBQ('countries')
+                    const countries = await fetchWithBQ('country')
                     if (countries.error) return { error: countries.error as FetchBaseQueryError }
                     result.countries = (countries.data as { name: string }[]).map((c, index) => {
                         return { id: index, name: c.name }
                     })
                 }
-                // CREATORS
-                const creators = await fetchWithBQ('1')
-                if (creators.error) return { error: creators.error as FetchBaseQueryError }
-                result.creators = transformMovieDetail(creators.data as IMovieDetailResponse).creators
-
                 return { data: result }
             }
         }),
         movieById: builder.query<IMovie, string>({
             query: (id) =>  ({
-                url: `${id}`,
+                url: `id/${id}`,
                 method: 'GET',
                 credentials: 'include'
             }),
@@ -109,6 +104,31 @@ export const moviesApi = createApi({
             transformResponse: (response: IMovieResponse[]): IMovie[] => {
                 return transformMovies(response)
             }
+        }),
+        moviePage: builder.query<IMovie[], number>({
+            query: (params) => ({
+                url: `page/${params}`,
+                method: 'GET',
+                credentials: 'include'
+            }),
+            transformResponse: (response: IMovieResponse[]): IMovie[] => {
+                return transformMovies(response)
+            }
+        }),
+        movieRemove: builder.mutation<void, number>({
+            query: (params) => ({
+                url: `${params}`,
+                method: 'DELETE',
+                credentials: 'include'
+            })
+        }),
+        movieUpdate: builder.mutation<void, IMovie>({
+            query: (params) => ({
+                url: `${params.id}`,
+                method: 'PUT',
+                credentials: 'include',
+                body: transformMovieToMovieResponse(params)
+            })
         })
     })
 })
@@ -117,5 +137,9 @@ export const {
     useMainPageQuery,
     useMovieByIdQuery,
     useMoviesQuery,
-    useMovieByFilterQuery
+    useMovieByFilterQuery,
+    useLazyMovieByFilterQuery,
+    useMoviePageQuery,
+    useMovieRemoveMutation,
+    useMovieUpdateMutation
 } = moviesApi

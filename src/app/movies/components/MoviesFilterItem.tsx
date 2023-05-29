@@ -7,9 +7,10 @@ import {
     MoviesFilterCountryItem,
     MoviesFilterCreatorsAutocomplete
 } from './index'
-import { IFilterType } from '../../../models/Movies'
-import { listGenres } from '../../../data/dataMovie'
-import { useAppSelector } from '../../../store/hooks'
+import { IFilterType } from '@/models/Movies'
+import { listGenres } from '@/data/dataMovie'
+import { useAppSelector } from '@/store/hooks'
+import { useLazyPersonByNameQuery } from '@/store/queries/persons.queri'
 
 type TProps = {
     data: {
@@ -17,6 +18,7 @@ type TProps = {
         type: IFilterType
         styleDropDown: string
         selected: string
+        listData: { id: number, name: string }[]
     }
     selectFilter: IFilterType | null
     changeSelectFilter: () => void
@@ -25,20 +27,33 @@ type TProps = {
 const MoviesFilterItem: React.FC<TProps> = ({ data, selectFilter, changeSelectFilter }) => {
 
     const [ active, setActive ] = useState<boolean>(data.type === selectFilter)
-    const filterData = useAppSelector(state => state.movies.countries)
+    const [ filterData, setFilterData ] = useState<{ id: number, name: string }[]>(data.listData)
+
+    const moviesCountries = useAppSelector(state => state.movies.countries)
+
+    const [ trigger, result ] = useLazyPersonByNameQuery()
 
     const sliders: { id: number, icon: string, name: string }[] =
         data.type === 'genres'
             ?
                 listGenres
             :
-                filterData.slice(0, 10).map(item => {
+                moviesCountries.slice(0, 10).map(item => {
                     return { id: item.id, icon: '', name: item.name }
                 })
 
     const handlerClick = () => {
         setActive(!active)
         changeSelectFilter()
+    }
+
+    const handleSearchActor = (params: { role: string, name: string }): void => {
+        if (params.name.length > 1) {
+            trigger(params)
+            setFilterData(result.data ? result.data : [])
+        } else {
+            setFilterData([])
+        }
     }
 
     return (
@@ -75,8 +90,8 @@ const MoviesFilterItem: React.FC<TProps> = ({ data, selectFilter, changeSelectFi
                                         </div>
                                     </div>
                                 }
-                                {['creators'].includes(data.type) && <MoviesFilterCreatorsAutocomplete /> }
-                                <MoviesFilterDropDown type={data.type} />
+                                {['actors', 'directors'].includes(data.type) && <MoviesFilterCreatorsAutocomplete type={data.type} handleSearchActor={handleSearchActor} /> }
+                                <MoviesFilterDropDown type={data.type} data={filterData} />
                             </div>
                         </div>
                     }

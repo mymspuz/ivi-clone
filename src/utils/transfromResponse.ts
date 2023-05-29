@@ -1,10 +1,11 @@
 import {
+    IGenresResponse,
     IMovie,
     IMovieCreator,
-    IMovieCreatorResponse,
+    IMovieCreatorResponse, IMovieCreatorSliderResponse,
     IMovieDetailResponse,
-    IMovieResponse
-} from '../models/Movie'
+    IMovieResponse, IMovieUpdateResponse
+} from '@/models/Movie'
 
 const getNumberArray = (src: string[]): { id: number, name: string }[] =>
     src.map((g, index) => { return { id: index, name: g }})
@@ -16,6 +17,7 @@ export const transformMovies = (src: IMovieResponse[]): IMovie[] => {
         return {
             id: m.film_id,
             name: m.name,
+            engName: m.alternativeName as string,
             movieType: 'Фильмы',
             genres: m.genres ? getNumberArray(m.genres) : [],
             yearRelease: { start: m.year, finish: 0 },
@@ -24,7 +26,7 @@ export const transformMovies = (src: IMovieResponse[]): IMovie[] => {
             quality: [],
             voice: [],
             rating: { valueInt: Math.trunc(m.kprating), valueFract: +getFract(m.kprating) },
-            voites: m.kpvotes ? m.kpvotes : 0,
+            votes: m.kpvotes ? m.kpvotes : 0,
             detailRating: [
                 { name: 'сюжет', value: 59 },
                 { name: 'актёры', value: 65 },
@@ -48,6 +50,7 @@ export const transformMovieDetail = (details: IMovieDetailResponse): IMovie => {
     return {
         id: film.film_id,
         name: film.name,
+        engName: film.alternativeName as string,
         movieType: 'Фильмы',
         genres: film.genres ? getNumberArray(film.genres) : [],
         yearRelease: { start: film.year, finish: 0 },
@@ -56,7 +59,7 @@ export const transformMovieDetail = (details: IMovieDetailResponse): IMovie => {
         quality: [],
         voice: [],
         rating: { valueInt: Math.trunc(film.kprating), valueFract: +getFract(film.kprating) },
-        voites: film.kpvotes ? film.kpvotes : 0,
+        votes: film.kpvotes ? film.kpvotes : 0,
         detailRating: [
             { name: 'сюжет', value: 59 },
             { name: 'актёры', value: 65 },
@@ -101,5 +104,56 @@ export const transformPersonDetail = (src: IMovieCreatorResponse): { creator: IM
             biography: src.description ? src.description: ''
         },
         movies: src.films ? transformMovies(src.films) : []
+    }
+}
+
+export const transformPersonName = (src: { person_id: number, name: string }[]): { id: number, name: string }[] => {
+    return src.map(item => {
+        return {
+            id: item.person_id,
+            name: item.name
+        }
+    })
+}
+
+export const transformPersonSlider = (src: IMovieCreatorSliderResponse[]): IMovieCreator[] => {
+    return src.map(item => {
+        return {
+            id: item.person_id,
+            name: {
+                rus: `${item.lastName} ${item.firstName}`,
+                eng: ''
+            },
+            poster: item.photo,
+            description: item.films_count,
+            biography: ''
+        }
+    })
+}
+
+export const transformGenres = (src: IGenresResponse[]): { id: number, name: string }[] => {
+    return src.map(genre => {
+        return {
+            id: genre.genre_id,
+            name: genre.name
+        }
+    })
+}
+
+export const transformMovieToMovieResponse = (src: IMovie): IMovieUpdateResponse => {
+    return {
+        name: src.name,
+        alternativeName: src.engName,
+        year: src.yearRelease.start,
+        description: src.description,
+        shortDescription: src.description,
+        slogan: '',
+        kprating: src.rating.valueInt + 0.1 * src.rating.valueFract,
+        kpvotes: src.votes,
+        movieLength: 0,
+        ageRating: src.ageLimit,
+        trailer: src.trailer,
+        poster: src.poster,
+        type: src.movieType
     }
 }

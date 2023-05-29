@@ -4601,3 +4601,9 @@ body.has-mobile-navigation .drawer__inner.isAbTest, body.touch.has-mobile-naviga
     margin-top: 24px;
     width: 100%
 }
+
+.my-input {
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+}

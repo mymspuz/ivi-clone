@@ -4,19 +4,25 @@ import 'rc-slider/assets/index.css'
 
 import { useAppDispatch, useAppSelector } from '@/store/hooks'
 import { setFilters } from '@/store/slice/moviesSlice'
+import { IFilterType } from '@/models/Movies'
 
-const MoviesFilterDropDownItemSlider = () => {
+type TProps = {
+    type: IFilterType
+}
+
+const MoviesFilterDropDownItemSlider: React.FC<TProps> = ({ type }) => {
 
     const dispatch = useAppDispatch()
-    const filterData = useAppSelector(state => state.movies.filters.ratings)
+    const filterData = useAppSelector(state => state.movies.filters)
 
     return (
         <li className="filterDropdown__item filterDropdown__item_radio">
             <Slider
                 range={false}
                 min={0}
-                value={filterData}
-                onChange={(value) => dispatch(setFilters({ type: 'ratings', value: String(value) })) }
+                max={type === 'ratings' ? 10 : 100000}
+                value={type === 'ratings' ? filterData.ratings : filterData.votes}
+                onChange={(value) => dispatch(setFilters({ type, value: String(value) })) }
             />
         </li>
     )

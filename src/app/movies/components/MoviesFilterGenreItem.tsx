@@ -1,7 +1,7 @@
 import React from 'react'
 
-import { useAppDispatch, useAppSelector } from '../../../store/hooks'
-import { setFilters } from '../../../store/slice/moviesSlice'
+import { useAppDispatch, useAppSelector } from '@/store/hooks'
+import { setFilters } from '@/store/slice/moviesSlice'
 
 type TProps = {
     icon: string

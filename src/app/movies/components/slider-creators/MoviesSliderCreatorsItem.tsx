@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { IMovieCreator } from '../../../../models/Movie'
+import { IMovieCreator } from '@/models/Movie'
 
 type TProps = {
     data: IMovieCreator
@@ -36,7 +36,7 @@ const MoviesSliderCreatorsItem: React.FC<TProps> = ({ data, size }) => {
                                 </div>
                                 <div className="nbl-amountBadge nbl-amountBadge_size_milta nbl-amountBadge_status_default nbl-poster__nbl-amountBadge">
                                     <div className="nbl-amountBadge__backBox"></div>
-                                    <div className="nbl-amountBadge__text">3</div>
+                                    <div className="nbl-amountBadge__text">{data.description}</div>
                                 </div>
                             </div>
                         </div>
@@ -46,7 +46,7 @@ const MoviesSliderCreatorsItem: React.FC<TProps> = ({ data, size }) => {
                             </div>
                             <div className="nbl-slimPosterBlock__secondTitle">{data.name.rus.split(' ')[1]}</div>
                             <div className="nbl-slimPosterBlock__extra">
-                                <div className="nbl-slimPosterBlock__extraItem">3 фильма</div>
+                                <div className="nbl-slimPosterBlock__extraItem">{data.description} фильма</div>
                             </div>
                         </div>
                     </a>

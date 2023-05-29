@@ -1,6 +1,5 @@
 'use client'
-import Image from 'next/image'
-import styles from './page.module.css'
+
 import React, {useEffect} from 'react'
 
 import { addClass } from '@/utils/bodyClass'
@@ -12,8 +11,8 @@ const defaultContext: IMovieMainPage = { top10: [], cartoons: [], foreign: [] }
 const MainPageContext = React.createContext(defaultContext)
 
 const Home: React.FC = () => {
-    addClass('body', 'home')
-    addClass('root', 'basePage__inner')
+    // addClass('body', 'home')
+    // addClass('root', 'basePage__inner')
 
     const { data, isLoading, isError, error, isSuccess } = useMainPageQuery()
 

@@ -1,7 +1,0 @@
-*.md
-.env
-.storybook
-.gitignore
-tmpl
-node_modules
-build

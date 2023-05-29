@@ -9,7 +9,7 @@ import '../assets/css/defer_ds.css'
 import '../assets/css/response.css'
 
 import { Inter } from 'next/font/google'
-import React, {PropsWithChildren, useEffect, useState} from 'react'
+import React, { PropsWithChildren, useEffect, useState } from 'react'
 import { Provider } from 'react-redux'
 
 import { HeaderSearchContext, HeaderSearchPopup } from './components/header'
@@ -51,13 +51,13 @@ const RootLayout: React.FC<PropsWithChildren<TProps>> = ({ children }) => {
             name="description"
             content="Web site created using create-react-app"
         />
-        <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png"/>
-        <link rel="manifest" href="%PUBLIC_URL%/manifest.json"/>
+        {/*<link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png"/>*/}
+        {/*<link rel="manifest" href="%PUBLIC_URL%/manifest.json"/>*/}
         <title>IVI-clone</title>
       </head>
       <body className={'basePage'}>
         <noscript>You need to enable JavaScript to run this app.</noscript>
-        <div id="root">
+        <div id="root" className={'basePage__inner'}>
             <Provider store={ store }>
                 <HeaderSearchContext.Provider value={{ toggleSearch: () => setIsSearch(!isSearch) }}>
                     <Header />

@@ -1,4 +1,4 @@
-export { default as ButtonLink } from './ButtonLink'
+export { default as ButtonLink } from './btn-link/ButtonLink'
 export { default as ButtonCommunityLink } from './ButtonCommunityLink'
 export { default as ButtonStore } from './ButtonStore'
 export { default as MovieItem } from './movie-item'

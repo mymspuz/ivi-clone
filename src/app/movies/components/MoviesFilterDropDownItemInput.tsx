@@ -17,6 +17,8 @@ const MoviesFilterDropDownItemInput: React.FC<TProps> = ({ name, type }) => {
     let items: string[] = []
     if (type === 'genres') items = filterData.genres
     if (type === 'countries') items = filterData.countries
+    if (type === 'actors') items = [filterData.actors]
+    if (type === 'directors') items = [filterData.directors]
 
     return (
         <li className="filterDropdown__item filterDropdown__item_checkbox">
